@@ -1,0 +1,181 @@
+Projectiles: {
+	ExampleCloneProjectile.DisplayName: Example Clone Projectile
+	Spray.DisplayName: Spray
+	RockStarBlueRaz.DisplayName: Rock Star Blue Raz
+}
+
+Items: {
+	Febreze: {
+		Tooltip: The classic smell stopper
+		DisplayName: Febreze Aloha Hawaien
+	}
+
+	ExampleBuffPotion: {
+		DisplayName: Example Buff Potion
+		Tooltip: ""
+	}
+
+	LuvfreshSoleil: {
+		DisplayName: LuvFresh Soleil Hawaien
+		Tooltip: Do not take a hit from the soleil hawaien or you might end up with an addiction
+	}
+
+	FebrezeAloha: {
+		DisplayName: Febreze Aloha
+		Tooltip: When you want to take a walk, but are stuck inside
+	}
+
+	FebrezeApril: {
+		DisplayName: Febreze April
+		Tooltip: Fancy little Febreze for fancy little mage
+	}
+
+	FebrezeHeavyDuty: {
+		DisplayName: Febreze Heavy Duty
+		Tooltip: The one to stop the smell of Moon Lord's feet
+	}
+
+	FebrezeLinen: {
+		DisplayName: Febreze Linen
+		Tooltip: The classic smell stopper
+	}
+
+	ExampleWorkbench: {
+		DisplayName: Dollarama
+		Tooltip: You can't buy thing nowadays, you need to craft them with MONEY and stuff
+	}
+
+	DolloramaHelmet: {
+		SetBonus:
+			'''
+			Your damage is increased by 20%
+			You get 3 more defense
+			You are immune to cuts
+			You feel stronger, you could work 8h a day, 5 days a week!
+			'''
+		DisplayName: Dollomet
+		Tooltip: Protecting your head is important, but in a Dollorama, really?
+	}
+
+	DolloramaBreastplate: {
+		DisplayName: Dolloplate
+		Tooltip: Well, we all need to wear something
+	}
+
+	DolloramaLeggings: {
+		DisplayName: Dollorama Leggings
+		Tooltip: Don't forget them, your boss will kill you
+	}
+
+	CutPotion: {
+		Tooltip: Don't cut yourself, the blade is very sharp
+		DisplayName: ExactoKnife
+	}
+
+	ExampleLifeFruit: {
+		DisplayName: Example Life Fruit
+		Tooltip: ""
+	}
+
+	ExampleManaCrystal: {
+		DisplayName: Example Mana Crystal
+		Tooltip: ""
+	}
+
+	AbsorbTeamDamageAccessory: {
+		DisplayName: Absorb Team Damage Accessory
+		Tooltip: ""
+	}
+
+	ExampleTownPetLicense: {
+		DisplayName: Example Town Pet License
+		Tooltip: ""
+	}
+
+	RockStarBlueRaz: {
+		DisplayName: RockStar Blue Raz
+		Tooltip: Careful with that. That can is more unstable than a Thermo Nuclear bomb. A gentle touch is all it need to release all of it's energy
+	}
+
+	ExampleDamageBooster: {
+		DisplayName: Example Damage Booster
+		Tooltip: ""
+	}
+
+	DamageBoosterMagic: {
+		DisplayName: Damage Booster Magic
+		Tooltip: ""
+	}
+
+	DamageBoosterMelee: {
+		DisplayName: Damage Booster Melee
+		Tooltip: ""
+	}
+
+	DamageBoosterRanged: {
+		DisplayName: Damage Booster Ranged
+		Tooltip: ""
+	}
+
+	DamageBoosterSummon: {
+		DisplayName: Damage Booster Summon
+		Tooltip: ""
+	}
+
+	BoosterPack: {
+		DisplayName: Booster Pack
+		Tooltip: ""
+	}
+}
+
+Buffs: {
+	ExampleDefenseBuff: {
+		DisplayName: Example Defense Buff
+		Description: Mods.TheDollorama.Buffs.ExampleDefenseBuff.Description
+	}
+
+	Cuts: {
+		Description: You are cut, your defense is lowered by 4, you can't regen your health and your attack and movement speed is decreased by 30%
+		DisplayName: Cuts
+	}
+
+	AbsorbTeamDamageBuff: {
+		DisplayName: Absorb Team Damage Buff
+		Description: Mods.TheDollorama.Buffs.AbsorbTeamDamageBuff.Description
+	}
+
+	ExampleDodgeBuff: {
+		DisplayName: Example Dodge Buff
+		Description: Mods.TheDollorama.Buffs.ExampleDodgeBuff.Description
+	}
+}
+
+DamageClasses: {
+	ExampleDamageClass.DisplayName: Example Damage Class
+	SprayDamage.DisplayName: Spray Damage
+}
+
+NPCs: {
+	ExamplePerson: {
+		DisplayName: Example Person
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeBiome: I like {BiomeName}, it's smell like Febreze.
+			DislikeBiome: I dislike {BiomeName}.
+			LoveNPC: I love {NPCName}.
+			LikeNPC: I like {NPCName}.
+			DislikeNPC: I dislike {NPCName}.
+			HateNPC: I hate {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	ExampleTownPet.DisplayName: Example Town Pet
+}

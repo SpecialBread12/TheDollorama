@@ -1,0 +1,59 @@
+﻿using TheDollorama.Content.Items.Weapons;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace TheDollorama.Content.Projectiles
+{
+	/// <summary>
+	/// This the class that clones the vanilla Meowmere projectile using CloneDefaults().
+	/// Make sure to check out <see cref="ExampleCloneWeapon" />, which fires this projectile; it itself is a cloned version of the Meowmere.
+	/// </summary>
+	public class Spray : ModProjectile
+	{
+		public override void SetDefaults() {
+
+            //Projectile.CloneDefaults(ProjectileID.PurificationPowder);  // Clone le projectile
+
+            // AIType = ProjectileID.PurificationPowder;
+            // Définir les propriétés de base du projectile
+            Projectile.width = 24; // Largeur de votre projectile
+            Projectile.height = 24; // Hauteur de votre projectile
+            Projectile.friendly = true;  // Le projectile est amical
+            Projectile.tileCollide = false; // Peut entrer en collision avec les tuiles
+            Projectile.ignoreWater = false; // Interagit avec l'eau
+            Projectile.timeLeft = 40;
+            Projectile.aiStyle = 0; // Vous ne voulez pas utiliser l'IA standard ici
+            Projectile.penetrate = -1;
+        }
+        public override void AI()
+        {
+            // Gérer le mouvement du laser
+            Projectile.velocity.Normalize(); // Normalise la vitesse pour que le laser se déplace en ligne droite
+            Projectile.velocity *= 9f; // Vitesse du laser
+
+            // Générer des particules de poussière pour simuler le nuage de fumée
+            if (Main.rand.NextBool(3))
+            {
+                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, 150, default(Color), 1.2f);
+            }
+        }
+
+
+
+        public override bool OnTileCollide(Vector2 oldVelocity)
+        {
+            // Ne pas appliquer d'effet de purification sur les tuiles
+            // Retourne false pour continuer la collision, mais sans purification
+            return false;
+        }
+
+        public override void OnKill(int timeLeft)
+        {
+            // Neutraliser les effets de purification lorsque le projectile est détruit
+            // Garder les effets visuels ici si nécessaire
+        }
+    }
+}
