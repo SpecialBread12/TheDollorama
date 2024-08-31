@@ -31,7 +31,7 @@ namespace TheDollorama.Content.Items.Consumables
 			Item.rare = ItemRarityID.Red;
 			Item.value = Item.buyPrice(gold: 1);
 			Item.buffType = ModContent.BuffType<Buffs.Cuts>(); // Specify an existing buff to be applied when used.
-			Item.buffTime = 640; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
+			Item.buffTime = 600; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
 		}
 	}
 }

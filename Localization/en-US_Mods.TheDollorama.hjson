@@ -178,4 +178,5 @@ NPCs: {
 	}
 
 	ExampleTownPet.DisplayName: Example Town Pet
+	Employe.DisplayName: Employe
 }

@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using TheDollorama.Content.Buffs;
+using TheDollorama.Content.Items.Consumables;
 
 namespace TheDollorama.Content.Items.Armor
 {
@@ -49,7 +50,7 @@ namespace TheDollorama.Content.Items.Armor
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
 			CreateRecipe()
-                .AddIngredient(ItemID.DirtBlock, 1)
+                .AddIngredient(ModContent.ItemType<CutPotion>(), 1)
                 .AddTile<Tiles.Furniture.ExampleWorkbench>()
 				.Register();
 		}
