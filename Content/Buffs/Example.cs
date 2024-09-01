@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace TheDollorama.Content.Buffs
 {
-	public class ExampleDefenseBuff : ModBuff
+	public class Example : ModBuff
 	{
 		public static readonly int DefenseBonus = 10;
 

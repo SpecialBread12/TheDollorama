@@ -6,8 +6,8 @@ Projectiles: {
 
 Items: {
 	Febreze: {
-		Tooltip: The classic smell stopper
 		DisplayName: Febreze Aloha Hawaien
+		Tooltip: The classic smell stopper
 	}
 
 	ExampleBuffPotion: {
@@ -68,8 +68,8 @@ Items: {
 	}
 
 	CutPotion: {
-		Tooltip: Don't cut yourself, the blade is very sharp
 		DisplayName: ExactoKnife
+		Tooltip: Don't cut yourself, the blade is very sharp
 	}
 
 	ExampleLifeFruit: {
@@ -104,27 +104,32 @@ Items: {
 
 	DamageBoosterMagic: {
 		DisplayName: Damage Booster Magic
-		Tooltip: ""
+		Tooltip: Increase permanently your magic damage
 	}
 
 	DamageBoosterMelee: {
 		DisplayName: Damage Booster Melee
-		Tooltip: ""
+		Tooltip: Increase permanently your melee damage
 	}
 
 	DamageBoosterRanged: {
 		DisplayName: Damage Booster Ranged
-		Tooltip: ""
+		Tooltip: Increase permanently your ranged damage
 	}
 
 	DamageBoosterSummon: {
 		DisplayName: Damage Booster Summon
-		Tooltip: ""
+		Tooltip: Increase permanently your summoning damage
 	}
 
 	BoosterPack: {
 		DisplayName: Booster Pack
-		Tooltip: ""
+		Tooltip: Used to craft one of four type of class damage boosting item
+	}
+
+	FruitPunchRockStar: {
+		DisplayName: RockStar Fruit Punch
+		Tooltip: The BEST RockStar to date it's buffing factor are off the chart.
 	}
 }
 
@@ -147,6 +152,21 @@ Buffs: {
 	ExampleDodgeBuff: {
 		DisplayName: Example Dodge Buff
 		Description: Mods.TheDollorama.Buffs.ExampleDodgeBuff.Description
+	}
+
+	Example: {
+		DisplayName: Example
+		Description: Mods.TheDollorama.Buffs.Example.Description
+	}
+
+	EnergyDrink: {
+		DisplayName: Energy Drink
+		Description: You have drunk a RockStar, Speed and Attackspeed is increased by 30%. Damage is increased by 20%. Regen is increased. Armor is increased by 10.
+	}
+
+	EnergyRegen: {
+		DisplayName: Energy Regen
+		Description: You are pushing your body to it's limit. Regen is INSANLY increase.d
 	}
 }
 
