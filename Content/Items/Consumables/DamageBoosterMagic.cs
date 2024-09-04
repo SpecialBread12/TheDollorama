@@ -28,7 +28,6 @@ namespace TheDollorama.Content.Items.Consumables
             Item.useTime = 20;
             Item.useAnimation = 20;
             Item.useStyle = ItemUseStyleID.HoldUp;
-            Item.value = 10000;
             Item.rare = ItemRarityID.Master;
             Item.UseSound = SoundID.Item4;
             Item.consumable = true;
@@ -56,7 +55,7 @@ namespace TheDollorama.Content.Items.Consumables
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.LifeFruit)
+                .AddIngredient(ItemID.GoldCoin, 5)
                 .AddIngredient(ModContent.ItemType<BoosterPack>())
                 .AddTile<Tiles.Furniture.ExampleWorkbench>()
                 .Register();

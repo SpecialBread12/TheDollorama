@@ -36,8 +36,9 @@ namespace TheDollorama.Content.NPCs
 	[AutoloadHead]
 	public class ExamplePerson : ModNPC
 	{
-		public const string ShopName = "Shop";
-		public int NumberOfTimesTalkedTo = 0;
+		public const string NormalShop = "Shop1";
+        public const string BoostingShop = "Shop2";
+        public int NumberOfTimesTalkedTo = 0;
 
 		private static int ShimmerHeadIndex;
 		private static Profiles.StackedNPCProfile NPCProfile;
@@ -151,6 +152,7 @@ namespace TheDollorama.Content.NPCs
 			}
 
 			// Create gore when the NPC is killed.
+			/*
 			if (Main.netMode != NetmodeID.Server && NPC.life <= 0) {
 				// Retrieve the gore types. This NPC has shimmer and party variants for head, arm, and leg gore. (12 total gores)
 				string variant = "";
@@ -171,6 +173,7 @@ namespace TheDollorama.Content.NPCs
 				Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
 				Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
 			}
+			*/
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs) { // Requirements for the town NPC to spawn.
@@ -266,17 +269,13 @@ namespace TheDollorama.Content.NPCs
 
 		public override void SetChatButtons(ref string button, ref string button2) { // What the chat buttons are when you open up the chat UI
 			button = Language.GetTextValue("LegacyInterface.28");
-			button2 = "Awesomeify";
-			if (Main.LocalPlayer.HasItem(ItemID.HiveBackpack)) {
-				button = "Upgrade " + Lang.GetItemNameValue(ItemID.HiveBackpack);
-			}
 		}
 
 		public override void OnChatButtonClicked(bool firstButton, ref string shop) {
 			if (firstButton) {
 				// We want 3 different functionalities for chat buttons, so we use HasItem to change button 1 between a shop and upgrade action.
-				
 
+				/*
                 if (Main.LocalPlayer.HasItem(ItemID.HiveBackpack)) {
 					SoundEngine.PlaySound(SoundID.Item37); // Reforge/Anvil sound
 
@@ -290,39 +289,44 @@ namespace TheDollorama.Content.NPCs
 
 					return;
 				}
+				*/
+					
+					
+					shop = NormalShop; // Name of the shop tab we want to open.à
 
-				shop = ShopName; // Name of the shop tab we want to open.
 			}
 		}
 
 		// Not completely finished, but below is what the NPC will sell
 		public override void AddShops() {
-			var npcShop = new NPCShop(Type, ShopName)
-				.Add<FebrezeAloha>()
-				.Add<FebrezeApril>()
-				.Add<FebrezeLinen>();
-				//.Add<EquipMaterial>()
-				//.Add<BossItem>()
-				//.Add(new Item(ModContent.ItemType<Items.Placeable.Furniture.ExampleWorkbench>()) { shopCustomPrice = Item.buyPrice(copper: 15) }) // This example sets a custom price, ExampleNPCShop.cs has more info on custom prices and currency. 
-				//.Add<Items.Placeable.Furniture.ExampleChair>()
-				//.Add<Items.Placeable.Furniture.ExampleDoor>()
-				//.Add<Items.Placeable.Furniture.ExampleBed>()
-				//.Add<Items.Placeable.Furniture.ExampleChest>()
-				//.Add<Items.Tools.ExamplePickaxe>()
-				//.Add<Items.Tools.ExampleHamaxe>()
-				//.Add<Items.Consumables.ExampleHealingPotion>(new Condition("Mods.ExampleMod.Conditions.PlayerHasLifeforceBuff", () => Main.LocalPlayer.HasBuff(BuffID.Lifeforce)))
-				//.Add<Items.Weapons.ExampleSword>(Condition.MoonPhasesQuarter0)
-				//.Add<ExampleGun>(Condition.MoonPhasesQuarter1)
-				//.Add<Items.Ammo.ExampleBullet>(Condition.MoonPhasesQuarter1)
-				//.Add<Items.Weapons.ExampleStaff>(ExampleConditions.DownedMinionBoss)
-				//.Add<ExampleOnBuyItem>()
-				//.Add<Items.Weapons.ExampleYoyo>(Condition.IsNpcShimmered); // Let's sell an yoyo if this NPC is shimmered!
-				/*
-			if (ModContent.GetInstance<ExampleModConfig>().ExampleWingsToggle) {
-				npcShop.Add<ExampleWings>(ExampleConditions.InExampleBiome);
-			}
-				*/
-			if (ModContent.TryFind("SummonersAssociation/BloodTalisman", out ModItem bloodTalisman)) {
+			var npcShop = new NPCShop(Type, NormalShop)
+				.Add<BoosterPack>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))));
+                //.Add<DamageBoosterMelee>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
+                //.Add<DamageBoosterMagic>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
+                //.Add<DamageBoosterRanged>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
+                //.Add<DamageBoosterSummon>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))));
+                //.Add<EquipMaterial>()
+                //.Add<BossItem>()
+                //.Add(new Item(ModContent.ItemType<Items.Placeable.Furniture.ExampleWorkbench>()) { shopCustomPrice = Item.buyPrice(copper: 15) }) // This example sets a custom price, ExampleNPCShop.cs has more info on custom prices and currency. 
+                //.Add<Items.Placeable.Furniture.ExampleChair>()
+                //.Add<Items.Placeable.Furniture.ExampleDoor>()
+                //.Add<Items.Placeable.Furniture.ExampleBed>()
+                //.Add<Items.Placeable.Furniture.ExampleChest>()
+                //.Add<Items.Tools.ExamplePickaxe>()
+                //.Add<Items.Tools.ExampleHamaxe>()
+                //.Add<Items.Consumables.ExampleHealingPotion>(new Condition("Mods.ExampleMod.Conditions.PlayerHasLifeforceBuff", () => Main.LocalPlayer.HasBuff(BuffID.Lifeforce)))
+                //.Add<Items.Weapons.ExampleSword>(Condition.MoonPhasesQuarter0)
+                //.Add<ExampleGun>(Condition.MoonPhasesQuarter1)
+                //.Add<Items.Ammo.ExampleBullet>(Condition.MoonPhasesQuarter1)
+                //.Add<Items.Weapons.ExampleStaff>(ExampleConditions.DownedMinionBoss)
+                //.Add<ExampleOnBuyItem>()
+                //.Add<Items.Weapons.ExampleYoyo>(Condition.IsNpcShimmered); // Let's sell an yoyo if this NPC is shimmered!
+            /*
+        if (ModContent.GetInstance<ExampleModConfig>().ExampleWingsToggle) {
+            npcShop.Add<ExampleWings>(ExampleConditions.InExampleBiome);
+        }
+            */
+            if (ModContent.TryFind("SummonersAssociation/BloodTalisman", out ModItem bloodTalisman)) {
 				npcShop.Add(bloodTalisman.Type);
 			}
 			npcShop.Register(); // Name of this shop tab

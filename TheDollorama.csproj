@@ -10,7 +10,8 @@
 
 	<!-- References -->
 	<ItemGroup>
-		
+	  <None Remove="Content\Buffs\Depressed.png" />
+	  <None Remove="Content\Items\Consumables\Depression.png" />
 	</ItemGroup>
 
 </Project>

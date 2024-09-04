@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace TheDollorama.Content.Items.Placeable.Furniture
 {
-	public class ExampleWorkbench : ModItem
+	public class Pallets : ModItem
 	{
 		public override void SetDefaults() {
 			// ModContent.TileType<Tiles.Furniture.ExampleWorkbench>() retrieves the id of the tile that this item should place when used.

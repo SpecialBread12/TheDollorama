@@ -13,7 +13,7 @@ using TheDollorama.Content.DamageClasses;
 namespace TheDollorama.Content.NPCs
 {
 	// Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/tModLoader/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
-	public class Employe : ModNPC
+	public class Employee : ModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -33,8 +33,8 @@ namespace TheDollorama.Content.NPCs
 			NPC.width = 18;
 			NPC.height = 40;
 			NPC.damage = 14;
-			NPC.defense = 6;
-			NPC.lifeMax = 200;
+			NPC.defense = 2;
+			NPC.lifeMax = 20;
 			NPC.HitSound = SoundID.NPCHit1;
 			NPC.DeathSound = SoundID.NPCDeath2;
 			NPC.value = 60f;

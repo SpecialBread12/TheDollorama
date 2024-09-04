@@ -9,10 +9,10 @@ namespace TheDollorama.Content.Items.Consumables
 	// This file showcases how to create an item that increases the player's maximum health on use.
 	// Within your ModPlayer, you need to save/load a count of usages. You also need to sync the data to other players.
 	// The overlay used to display the custom life fruit can be found in Common/UI/ResourceDisplay/VanillaLifeOverlay.cs
-	internal class ExampleLifeFruit : ModItem
+	internal class Reese : ModItem
 	{
-		public static readonly int MaxExampleLifeFruits = 10;
-		public static readonly int LifePerFruit = 10;
+		public static readonly int MaxExampleLifeFruits = 100;
+		public static readonly int LifePerFruit = 2;
 
 		public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(LifePerFruit, MaxExampleLifeFruits);
 
@@ -49,7 +49,8 @@ namespace TheDollorama.Content.Items.Consumables
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
 			CreateRecipe()
-				.AddTile<Tiles.Furniture.ExampleWorkbench>()
+                .AddIngredient(ItemID.GoldCoin, 10)
+                .AddTile<Tiles.Furniture.ExampleWorkbench>()
 				.Register();
 		}
 	}

@@ -131,6 +131,21 @@ Items: {
 		DisplayName: RockStar Fruit Punch
 		Tooltip: The BEST RockStar to date it's buffing factor are off the chart.
 	}
+
+	Reese: {
+		DisplayName: Reese
+		Tooltip: The cursed chocolat, created by satan himself, increase Max Health by 2, can be used up to a 100.
+	}
+
+	Depression: {
+		Tooltip: Don't give in. Don't join them. Let the girl have their own problem.
+		DisplayName: Depression
+	}
+
+	Pallets: {
+		Tooltip: The home of everything Dollorama related
+		DisplayName: Pallets
+	}
 }
 
 Buffs: {
@@ -168,6 +183,11 @@ Buffs: {
 		DisplayName: Energy Regen
 		Description: You are pushing your body to it's limit. Regen is INSANLY increase.d
 	}
+
+	Depressed: {
+		Description: You are depressed, you feel your body leaving you.
+		DisplayName: Depressed
+	}
 }
 
 DamageClasses: {
@@ -198,5 +218,29 @@ NPCs: {
 	}
 
 	ExampleTownPet.DisplayName: Example Town Pet
-	Employe.DisplayName: Employe
+
+	K: {
+		DisplayName: Lazy Girl
+
+		TownNPCMood: {
+			Princess_LovesNPC: I like {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			HateNPC: I hate {NPCName}.
+			DislikeNPC: I dislike {NPCName}.
+			LikeNPC: I like {NPCName}.
+			LoveNPC: I love {NPCName}.
+			DislikeBiome: I dislike {BiomeName}.
+			LikeBiome: I like {BiomeName}.
+			HateCrowded: I hate how crowded I am.
+			DislikeCrowded: I dislike how crowded I am.
+			LoveSpace: I love having so much space.
+			FarFromHome: I am too far from home.
+			NoHome: I hate not having a home.
+			Content: I am content.
+		}
+	}
+
+	Employee.DisplayName: Employee
 }
+
+Conditions.PlayerHasBoosterPack: Mods.TheDollorama.Conditions.PlayerHasBoosterPack

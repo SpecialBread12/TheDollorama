@@ -14,7 +14,7 @@ namespace TheDollorama.Common.Players
 
 		public override void ModifyMaxStats(out StatModifier health, out StatModifier mana) {
 			health = StatModifier.Default;
-			health.Base = exampleLifeFruits * ExampleLifeFruit.LifePerFruit;
+			health.Base = exampleLifeFruits * Reese.LifePerFruit;
 			// Alternatively:  health = StatModifier.Default with { Base = exampleLifeFruits * ExampleLifeFruit.LifePerFruit };
 			mana = StatModifier.Default;
 			mana.Base = exampleManaCrystals * ExampleManaCrystal.ManaPerCrystal;
