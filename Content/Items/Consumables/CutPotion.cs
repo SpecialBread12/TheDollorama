@@ -37,7 +37,7 @@ namespace TheDollorama.Content.Items.Consumables
         {
             CreateRecipe()
                 .AddIngredient(ItemID.GoldCoin, 5)
-                .AddTile<Tiles.Furniture.ExampleWorkbench>()
+                .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
                 .Register();
         }
     }

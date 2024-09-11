@@ -8,7 +8,7 @@ namespace TheDollorama.Content.Buffs
 {
 	public class AbsorbTeamDamageBuff : ModBuff
 	{
-		public override LocalizedText Description => base.Description.WithFormatArgs(AbsorbTeamDamageAccessory.DamageAbsorptionPercent);
+		//public override LocalizedText Description => base.Description.WithFormatArgs(JoseeBadge.DamageAbsorptionPercent);
 
 		public override void SetStaticDefaults() {
 			Main.buffNoSave[Type] = true;

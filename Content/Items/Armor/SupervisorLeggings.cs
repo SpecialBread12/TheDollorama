@@ -9,7 +9,7 @@ namespace TheDollorama.Content.Items.Armor
 	// The AutoloadEquip attribute automatically attaches an equip texture to this item.
 	// Providing the EquipType.Legs value here will result in TML expecting a X_Legs.png file to be placed next to the item's main texture.
 	[AutoloadEquip(EquipType.Legs)]
-	public class DolloramaLeggings : ModItem
+	public class SupervisorLeggings : ModItem
 	{
 		public static readonly int MoveSpeedBonus = 5;
 
@@ -19,19 +19,19 @@ namespace TheDollorama.Content.Items.Armor
 			Item.width = 18; // Width of the item
 			Item.height = 18; // Height of the item
 			Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
-			Item.rare = ItemRarityID.Green; // The rarity of the item
-			Item.defense = 4; // The amount of defense the item will give when equipped
+			Item.rare = ItemRarityID.Orange; // The rarity of the item
+			Item.defense = 7; // The amount of defense the item will give when equipped
 		}
 
 		public override void UpdateEquip(Player player) {
-			player.moveSpeed += MoveSpeedBonus / 100f; // Increase the movement speed of the player
+			//player.moveSpeed += MoveSpeedBonus / 100f; // Increase the movement speed of the player
 		}
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
 			CreateRecipe()
-                .AddIngredient(ModContent.ItemType<CutPotion>(), 1)
-                .AddIngredient(ItemID.GoldCoin, 5)
+                .AddIngredient(ModContent.ItemType<Depression>(), 2)
+                .AddIngredient(ItemID.GoldCoin, 25)
                 .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
 				.Register();
 		}

@@ -8,6 +8,7 @@ using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
 using TheDollorama.Content.Items;
+using TheDollorama.Content.Items.Consumables;
 //using TheDollorama.Common.ItemDropRules.DropConditions;
 
 namespace TheDollorama.Common.GlobalNPCs
@@ -16,9 +17,13 @@ namespace TheDollorama.Common.GlobalNPCs
     {
         public override void ModifyNPCLoot(NPC npc, Terraria.ModLoader.NPCLoot npcLoot)
         {
-            if (Main.rand.NextFloat() < 0.0001) // 1% chance to drop
+            if (Main.rand.NextFloat() < 0.0001f) // 1% chance to drop
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<BoosterPack>(), 1));
+            }
+            if (Main.rand.NextFloat() < 0.0001f) // 1% chance to drop
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FruitPunchRockStar>(), 1));
             }
         }
         /*

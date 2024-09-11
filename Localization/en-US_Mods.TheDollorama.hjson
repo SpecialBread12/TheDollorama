@@ -53,17 +53,17 @@ Items: {
 			You are immune to cuts
 			You feel stronger, you could work 8h a day, 5 days a week!
 			'''
-		DisplayName: Dollomet
+		DisplayName: Worker cap
 		Tooltip: Protecting your head is important, but in a Dollorama, really?
 	}
 
 	DolloramaBreastplate: {
-		DisplayName: Dolloplate
+		DisplayName: Worker T-shirt
 		Tooltip: Well, we all need to wear something
 	}
 
 	DolloramaLeggings: {
-		DisplayName: Dollorama Leggings
+		DisplayName: Worker pants
 		Tooltip: Don't forget them, your boss will kill you
 	}
 
@@ -138,13 +138,64 @@ Items: {
 	}
 
 	Depression: {
-		Tooltip: Don't give in. Don't join them. Let the girl have their own problem.
-		DisplayName: Depression
+		Tooltip: A sad cat video, will give you depression.
+		DisplayName: Sad cat video
 	}
 
 	Pallets: {
-		Tooltip: The home of everything Dollorama related
+		Tooltip: The home of everything Dollorama related. Also money is required.
 		DisplayName: Pallets
+	}
+
+	SupervisorHelmet: {
+		SetBonus:
+			'''
+			Your damage is increased by 20%
+			Your AttackSpeed is increased by 30%
+			You get 5 more defense
+			You are immune to cuts
+			You are immune to depression
+			Your underling hate you, but you get good money.
+			'''
+		DisplayName: Supervisor Helmet
+		Tooltip: ""
+	}
+
+	SupervisorBreastplate: {
+		DisplayName: Supervisor Breastplate
+		Tooltip: ""
+	}
+
+	SupervisorLeggings: {
+		DisplayName: Supervisor Leggings
+		Tooltip: ""
+	}
+
+	JoseeBadge: {
+		DisplayName: Josee's Badge
+		Tooltip:
+			'''
+			Incease Damage and AttackSpeed by 80%
+			Increase RunningSpeed by 10
+			Increase Regen
+			Increase MinionSlot by 6
+			Increase MaxLife by 100
+			Increase MaxMana by 40
+			Reduce ManaCost by 25
+			Give Immunity to Knockback
+			Increase WingTime
+			Reduce Delay Before Regen Start
+			The Badge of Josee Dollorama, one of the rare thing still liking him to this mortal realm.
+			'''
+	}
+
+	JoseePickaxe: {
+		DisplayName: Josee's Pickaxe
+		Tooltip:
+			'''
+			+5 range
+			A dangerous pickaxe. Made by combining the blood of Josee Dollorama and "HIS" bones together. Cause Damage to it's user.
+			'''
 	}
 }
 

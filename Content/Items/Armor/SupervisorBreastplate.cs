@@ -9,7 +9,7 @@ namespace TheDollorama.Content.Items.Armor
 	// The AutoloadEquip attribute automatically attaches an equip texture to this item.
 	// Providing the EquipType.Body value here will result in TML expecting X_Arms.png, X_Body.png and X_FemaleBody.png sprite-sheet files to be placed next to the item's main texture.
 	[AutoloadEquip(EquipType.Body)]
-	public class DolloramaBreastplate : ModItem
+	public class SupervisorBreastplate : ModItem
 	{
 		public static readonly int MaxManaIncrease = 20;
 		
@@ -20,8 +20,8 @@ namespace TheDollorama.Content.Items.Armor
 			Item.width = 18; // Width of the item
 			Item.height = 18; // Height of the item
 			Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
-			Item.rare = ItemRarityID.Green; // The rarity of the item
-			Item.defense = 8; // The amount of defense the item will give when equipped
+			Item.rare = ItemRarityID.Orange; // The rarity of the item
+			Item.defense = 17; // The amount of defense the item will give when equipped
 		}
 
 		public override void UpdateEquip(Player player) {
@@ -33,8 +33,8 @@ namespace TheDollorama.Content.Items.Armor
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
 			CreateRecipe()
-                .AddIngredient(ModContent.ItemType<CutPotion>(), 1)
-                .AddIngredient(ItemID.GoldCoin, 14)
+                .AddIngredient(ModContent.ItemType<Depression>(), 5)
+                .AddIngredient(ItemID.GoldCoin, 35)
                 .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
 				.Register();
 		}

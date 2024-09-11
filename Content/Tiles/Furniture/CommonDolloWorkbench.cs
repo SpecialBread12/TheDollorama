@@ -7,7 +7,7 @@ using Terraria.ObjectData;
 
 namespace TheDollorama.Content.Tiles.Furniture
 {
-	public class ExampleWorkbench : ModTile
+	public class CommonDolloWorkbench : ModTile
 	{
 		public override void SetStaticDefaults() {
 			// Properties
@@ -19,8 +19,8 @@ namespace TheDollorama.Content.Tiles.Furniture
 			TileID.Sets.DisableSmartCursor[Type] = true;
 			TileID.Sets.IgnoredByNpcStepUp[Type] = true; // This line makes NPCs not try to step up this tile during their movement. Only use this for furniture with solid tops.
 
-			DustType = ModContent.DustType<Dusts.Sparkle>();
-			AdjTiles = new int[] { TileID.WorkBenches };
+            DustType = DustID.WoodFurniture;
+            AdjTiles = new int[] { TileID.WorkBenches };
 
 			// Placement
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);

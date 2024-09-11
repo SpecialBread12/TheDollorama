@@ -34,19 +34,12 @@ namespace TheDollorama.Content.Items
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
 			CreateRecipe(1)
-				//.AddIngredient(ItemID.DirtBlock, 10)
-				.AddTile(TileID.WorkBenches)
+                //.AddIngredient(ItemID.DirtBlock, 10)
+                .AddIngredient(ItemID.PlatinumCoin, 20)
+                .AddTile(TileID.WorkBenches)
 				.Register();
 		}
 
 		// Researching the Example item will give you immediate access to the torch, block, wall and workbench!
-		public override void OnResearched(bool fullyResearched) {
-			if (fullyResearched) {
-				//CreativeUI.ResearchItem(ModContent.ItemType<ExampleTorch>());
-				//CreativeUI.ResearchItem(ModContent.ItemType<ExampleBlock>());
-				//CreativeUI.ResearchItem(ModContent.ItemType<ExampleWall>());
-				CreativeUI.ResearchItem(ModContent.ItemType<Pallets>());
-			}
-		}
 	}
 }

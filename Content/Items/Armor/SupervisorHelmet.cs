@@ -10,7 +10,7 @@ namespace TheDollorama.Content.Items.Armor
 	// The AutoloadEquip attribute automatically attaches an equip texture to this item.
 	// Providing the EquipType.Head value here will result in TML expecting a X_Head.png file to be placed next to the item's main texture.
 	[AutoloadEquip(EquipType.Head)]
-	public class DolloramaHelmet : ModItem
+	public class SupervisorHelmet : ModItem
 	{
 		public static readonly int AdditiveGenericDamageBonus = 25;
 
@@ -30,28 +30,30 @@ namespace TheDollorama.Content.Items.Armor
 			Item.width = 18; // Width of the item
 			Item.height = 18; // Height of the item
 			Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
-			Item.rare = ItemRarityID.Green; // The rarity of the item
-			Item.defense = 3; // The amount of defense the item will give when equipped
+			Item.rare = ItemRarityID.Orange; // The rarity of the item
+			Item.defense = 9; // The amount of defense the item will give when equipped
 		}
 
 		// IsArmorSet determines what armor pieces are needed for the setbonus to take effect
 		public override bool IsArmorSet(Item head, Item body, Item legs) {
-			return body.type == ModContent.ItemType<DolloramaBreastplate>() && legs.type == ModContent.ItemType<DolloramaLeggings>();
+			return body.type == ModContent.ItemType<SupervisorBreastplate>() && legs.type == ModContent.ItemType<SupervisorLeggings>();
 		}
 
 		// UpdateArmorSet allows you to give set bonuses to the armor.
 		public override void UpdateArmorSet(Player player) {
 			player.setBonus = SetBonusText.Value; // This is the setbonus tooltip: "Increases dealt damage by 20%"
-			player.GetDamage(DamageClass.Generic) += AdditiveGenericDamageBonus / 100f; // Increase dealt damage for all weapon classes by 20%
-            player.statDefense += 3;
+			player.GetDamage(DamageClass.Generic) += 25f; // Increase dealt damage for all weapon classes by 20%
+            player.GetAttackSpeed(DamageClass.Generic) += 0.30f;
+            player.statDefense += 5;
             player.buffImmune[ModContent.BuffType<Cuts>()] = true;
+            player.buffImmune[ModContent.BuffType<Depressed>()] = true;
         }
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
 			CreateRecipe()
-                .AddIngredient(ModContent.ItemType<CutPotion>(), 1)
-                .AddIngredient(ItemID.GoldCoin, 8)
+                .AddIngredient(ModContent.ItemType<Depression>(), 3)
+                .AddIngredient(ItemID.GoldCoin, 30)
                 .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
 				.Register();
 		}
