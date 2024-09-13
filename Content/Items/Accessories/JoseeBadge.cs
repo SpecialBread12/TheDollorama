@@ -21,7 +21,7 @@ namespace TheDollorama.Content.Items.Accessories
 			Item.width = 24;
 			Item.height = 24;
 			Item.accessory = true;
-			Item.rare = ItemRarityID.Master;
+			Item.rare = ItemRarityID.Purple;
 			Item.defense = 16;
 			Item.value = Item.buyPrice(0, 30, 0, 0);
 		}

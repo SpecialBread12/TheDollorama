@@ -2,6 +2,7 @@ Projectiles: {
 	ExampleCloneProjectile.DisplayName: Example Clone Projectile
 	Spray.DisplayName: Spray
 	RockStarBlueRaz.DisplayName: Rock Star Blue Raz
+	MinionBossEye.DisplayName: Minion Boss Eye
 }
 
 Items: {
@@ -197,6 +198,35 @@ Items: {
 			A dangerous pickaxe. Made by combining the blood of Josee Dollorama and "HIS" bones together. Cause Damage to it's user.
 			'''
 	}
+
+	MinionBossRelic: {
+		DisplayName: Minion Boss Relic
+		Tooltip: ""
+	}
+
+	MinionBossTrophy: {
+		DisplayName: Minion Boss Trophy
+		Tooltip: ""
+	}
+
+	Dollar: {
+		DisplayName: The Dollar
+		Tooltip:
+			'''
+			Doesn't use ammo
+			The one and only Dollorama Dollar
+			'''
+	}
+
+	MinionBossBag: {
+		DisplayName: Minion Boss Bag
+		Tooltip: ""
+	}
+
+	MinionBossSummonItem: {
+		DisplayName: Minion Boss Summon Item
+		Tooltip: ""
+	}
 }
 
 Buffs: {
@@ -292,6 +322,8 @@ NPCs: {
 	}
 
 	Employee.DisplayName: Employee
+	MinionBossBody.DisplayName: Minion Boss Body
+	MinionBossMinion.DisplayName: Minion Boss Minion
 }
 
 Conditions.PlayerHasBoosterPack: Mods.TheDollorama.Conditions.PlayerHasBoosterPack
