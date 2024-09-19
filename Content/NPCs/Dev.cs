@@ -34,7 +34,7 @@ namespace TheDollorama.Content.NPCs
 {
 	// [AutoloadHead] and NPC.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
 	[AutoloadHead]
-	public class Fred : ModNPC
+	public class Dev : ModNPC
 	{
 		public const string NormalShop = "Shop1";
         public int NumberOfTimesTalkedTo = 0;
@@ -232,7 +232,6 @@ namespace TheDollorama.Content.NPCs
 		}
 
 		public override string GetChat() {
-            string npcName = NPC.GivenName; // Récupère le nom du NPC
             WeightedRandom<string> chat = new WeightedRandom<string>();
 
 			int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
@@ -241,9 +240,10 @@ namespace TheDollorama.Content.NPCs
 			}
 			// These are things that the NPC has a chance of telling you when you talk to it.
 				chat.Add(Language.GetTextValue("Don't mind my ADHD, it can get pretty powerfull sometime."));
-                chat.Add(Language.GetTextValue("Where are my things, I always forget them"), 0.9);
-                chat.Add(Language.GetTextValue("Boneless Pizza"), 0.8);
+                chat.Add(Language.GetTextValue("Where are my things, I always forget them."), 0.9);
+                chat.Add(Language.GetTextValue("Boneless Pizza."), 0.8);
                 chat.Add(Language.GetTextValue("Obviously they are not gonna let you rip ass into a walmart bag !"), 0.05);
+				chat.Add(Language.GetTextValue("It was not by my hand, that I am once again, given flesh."), 0.4);
                 chat.Add(Language.GetTextValue("BRING ME MORGAN"), 0.01);
 			/*
             NumberOfTimesTalkedTo++;

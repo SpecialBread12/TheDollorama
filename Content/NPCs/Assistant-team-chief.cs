@@ -218,7 +218,6 @@ namespace TheDollorama.Content.NPCs
 			return new List<string>() {
 				"Caro",
 				"Tommy",
-				"Fred",
 				"Alex",
 				"Jordan",
 				"Claudine",
