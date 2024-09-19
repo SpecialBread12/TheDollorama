@@ -24,7 +24,7 @@ namespace TheDollorama.Content.Items.Consumables
 			Item.height = 20;
 			Item.maxStack = 20;
 			Item.value = 100;
-			Item.rare = ItemRarityID.Blue;
+			Item.rare = ItemRarityID.Green;
 			Item.useAnimation = 30;
 			Item.useTime = 30;
 			Item.useStyle = ItemUseStyleID.HoldUp;

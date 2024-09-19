@@ -26,6 +26,7 @@ namespace TheDollorama.Content.Items.Tools
 			Item.autoReuse = true;
 
 			Item.pick = 800; // How strong the pickaxe is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
+			Item.axe = 300;
 			Item.attackSpeedOnlyAffectsWeaponAnimation = false; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
 		}
 

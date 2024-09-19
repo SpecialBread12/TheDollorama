@@ -34,10 +34,9 @@ namespace TheDollorama.Content.NPCs
 {
 	// [AutoloadHead] and NPC.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
 	[AutoloadHead]
-	public class ExamplePerson : ModNPC
+	public class Fred : ModNPC
 	{
 		public const string NormalShop = "Shop1";
-        public const string BoostingShop = "Shop2";
         public int NumberOfTimesTalkedTo = 0;
 
 		private static int ShimmerHeadIndex;
@@ -77,9 +76,10 @@ namespace TheDollorama.Content.NPCs
 
 			NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
 
-			// Set Example Person's biome and neighbor preferences with the NPCHappiness hook. You can add happiness text and remarks with localization (See an example in ExampleMod/Localization/en-US.lang).
-			// NOTE: The following code uses chaining - a style that works due to the fact that the SetXAffection methods return the same NPCHappiness instance they're called on.
-			NPC.Happiness
+
+                                            // Set Example Person's biome and neighbor preferences with the NPCHappiness hook. You can add happiness text and remarks with localization (See an example in ExampleMod/Localization/en-US.lang).
+                                            // NOTE: The following code uses chaining - a style that works due to the fact that the SetXAffection methods return the same NPCHappiness instance they're called on.
+            NPC.Happiness
 				.SetBiomeAffection<ForestBiome>(AffectionLevel.Like) // Example Person prefers the forest.
 				.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike) // Example Person dislikes the snow.
 				//.SetBiomeAffection<ExampleSurfaceBiome>(AffectionLevel.Love) // Example Person likes the Example Surface Biome
@@ -87,10 +87,12 @@ namespace TheDollorama.Content.NPCs
 				.SetNPCAffection(NPCID.Guide, AffectionLevel.Like) // Likes living near the guide.
 				.SetNPCAffection(NPCID.Merchant, AffectionLevel.Dislike) // Dislikes living near the merchant.
 				.SetNPCAffection(NPCID.Demolitionist, AffectionLevel.Hate) // Hates living near the demolitionist.
-			; // < Mind the semicolon!
+                .SetNPCAffection(ModContent.NPCType<NPCs.K>(), AffectionLevel.Hate)
 
-			// This creates a "profile" for ExamplePerson, which allows for different textures during a party and/or while the NPC is shimmered.
-			NPCProfile = new Profiles.StackedNPCProfile(
+            ; // < Mind the semicolon!
+
+            // This creates a "profile" for ExamplePerson, which allows for different textures during a party and/or while the NPC is shimmered.
+            NPCProfile = new Profiles.StackedNPCProfile(
 				new Profiles.DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture), Texture + "_Party"),
 				new Profiles.DefaultNPCProfile(Texture + "_Shimmer", ShimmerHeadIndex, Texture + "_Shimmer_Party")
 			);
@@ -102,9 +104,9 @@ namespace TheDollorama.Content.NPCs
 			NPC.width = 18;
 			NPC.height = 40;
 			NPC.aiStyle = 7;
-			NPC.damage = 10;
-			NPC.defense = 15;
-			NPC.lifeMax = 250;
+			NPC.damage = 48;
+			NPC.defense = 75;
+			NPC.lifeMax = 400;
 			NPC.HitSound = SoundID.NPCHit1;
 			NPC.DeathSound = SoundID.NPCDeath1;
 			NPC.knockBackResist = 0.5f;
@@ -213,13 +215,7 @@ namespace TheDollorama.Content.NPCs
 
 		public override List<string> SetNPCNameList() {
 			return new List<string>() {
-				"Caro Lee",
-				"Tommy",
-				"Frédérick",
-				"Alex Antoine",
-				"Jordan",
-				"Claudine",
-				"Maude"
+				"Fred"
 			};
 		}
 
@@ -236,32 +232,32 @@ namespace TheDollorama.Content.NPCs
 		}
 
 		public override string GetChat() {
-			WeightedRandom<string> chat = new WeightedRandom<string>();
+            string npcName = NPC.GivenName; // Récupère le nom du NPC
+            WeightedRandom<string> chat = new WeightedRandom<string>();
 
 			int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
 			if (partyGirl >= 0 && Main.rand.NextBool(4)) {
 				chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.PartyGirlDialogue", Main.npc[partyGirl].GivenName));
 			}
 			// These are things that the NPC has a chance of telling you when you talk to it.
-			chat.Add(Language.GetTextValue("What's up my man, came for your daily refill of Febreze"));
-			chat.Add(Language.GetTextValue("Sometime I feel lonely, sometime I don't"));
-			chat.Add(Language.GetTextValue("Moon Lord need to use some deodorent, he smell like a fish"));
-			chat.Add(Language.GetTextValue("Did you know that a certain someone with a K in her name smell like sea food. I wonder who it is"));
-			chat.Add(Language.GetTextValue("BRING ME MORGAN"), 0.1);
-			chat.Add(Language.GetTextValue("Did you know that Neil Rossy was weak to Deez Nuts. I know crazy"), 0.5);
-
-			NumberOfTimesTalkedTo++;
+				chat.Add(Language.GetTextValue("Don't mind my ADHD, it can get pretty powerfull sometime."));
+                chat.Add(Language.GetTextValue("Where are my things, I always forget them"), 0.9);
+                chat.Add(Language.GetTextValue("Boneless Pizza"), 0.8);
+                chat.Add(Language.GetTextValue("Obviously they are not gonna let you rip ass into a walmart bag !"), 0.05);
+                chat.Add(Language.GetTextValue("BRING ME MORGAN"), 0.01);
+			/*
+            NumberOfTimesTalkedTo++;
 			if (NumberOfTimesTalkedTo >= 10) {
 				//This counter is linked to a single instance of the NPC, so if ExamplePerson is killed, the counter will reset.
 				chat.Add(Language.GetTextValue("Go bother someone else, like that person with a K, I know she will love it"));
 			}
-
+			*/
 			string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
 
 			// Here is some additional logic based on the chosen chat line. In this case, we want to display an item in the corner for StandardDialogue4.
 			if (chosenChat == Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue4")) {
 				// Main.npcChatCornerItem shows a single item in the corner, like the Angler Quest chat.
-				Main.npcChatCornerItem = ItemID.HiveBackpack;
+				Main.npcChatCornerItem = ModContent.ItemType<Dollar>();
 			}
 
 			return chosenChat;
@@ -301,34 +297,6 @@ namespace TheDollorama.Content.NPCs
 		public override void AddShops() {
 			var npcShop = new NPCShop(Type, NormalShop)
 				.Add<BoosterPack>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))));
-                //.Add<DamageBoosterMelee>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
-                //.Add<DamageBoosterMagic>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
-                //.Add<DamageBoosterRanged>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
-                //.Add<DamageBoosterSummon>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))));
-                //.Add<EquipMaterial>()
-                //.Add<BossItem>()
-                //.Add(new Item(ModContent.ItemType<Items.Placeable.Furniture.ExampleWorkbench>()) { shopCustomPrice = Item.buyPrice(copper: 15) }) // This example sets a custom price, ExampleNPCShop.cs has more info on custom prices and currency. 
-                //.Add<Items.Placeable.Furniture.ExampleChair>()
-                //.Add<Items.Placeable.Furniture.ExampleDoor>()
-                //.Add<Items.Placeable.Furniture.ExampleBed>()
-                //.Add<Items.Placeable.Furniture.ExampleChest>()
-                //.Add<Items.Tools.ExamplePickaxe>()
-                //.Add<Items.Tools.ExampleHamaxe>()
-                //.Add<Items.Consumables.ExampleHealingPotion>(new Condition("Mods.ExampleMod.Conditions.PlayerHasLifeforceBuff", () => Main.LocalPlayer.HasBuff(BuffID.Lifeforce)))
-                //.Add<Items.Weapons.ExampleSword>(Condition.MoonPhasesQuarter0)
-                //.Add<ExampleGun>(Condition.MoonPhasesQuarter1)
-                //.Add<Items.Ammo.ExampleBullet>(Condition.MoonPhasesQuarter1)
-                //.Add<Items.Weapons.ExampleStaff>(ExampleConditions.DownedMinionBoss)
-                //.Add<ExampleOnBuyItem>()
-                //.Add<Items.Weapons.ExampleYoyo>(Condition.IsNpcShimmered); // Let's sell an yoyo if this NPC is shimmered!
-            /*
-        if (ModContent.GetInstance<ExampleModConfig>().ExampleWingsToggle) {
-            npcShop.Add<ExampleWings>(ExampleConditions.InExampleBiome);
-        }
-            */
-            if (ModContent.TryFind("SummonersAssociation/BloodTalisman", out ModItem bloodTalisman)) {
-				npcShop.Add(bloodTalisman.Type);
-			}
 			npcShop.Register(); // Name of this shop tab
 		}
 
@@ -348,7 +316,7 @@ namespace TheDollorama.Content.NPCs
 		}
 
 		public override void ModifyNPCLoot(NPCLoot npcLoot) {
-			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LuvfreshSoleil>()));
+			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Dollar>()));
 		}
 
 		// Make this Town NPC teleport to the King and/or Queen statue when triggered. Return toKingStatue for only King Statues. Return !toKingStatue for only Queen Statues. Return true for both.

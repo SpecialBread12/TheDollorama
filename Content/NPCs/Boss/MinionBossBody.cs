@@ -63,7 +63,7 @@ namespace TheDollorama.Content.NPCs.Boss
 			set => NPC.localAI[0] = value ? 1f : 0f;
 		}
 
-		private const int FirstStageTimerMax = 90;
+		private const int FirstStageTimerMax = 10;
 		// This is a reference property. It lets us write FirstStageTimer as if it's NPC.localAI[1], essentially giving it our own name
 		public ref float FirstStageTimer => ref NPC.localAI[1];
 
@@ -415,8 +415,8 @@ namespace TheDollorama.Content.NPCs.Boss
 			}
 
 			float distance = 200; // Distance in pixels behind the player
-
-			if (FirstStageTimer == 0) {
+            DoSecondStage_SpawnEyes(player);
+            if (FirstStageTimer == 0) {
 				Vector2 fromPlayer = NPC.Center - player.Center;
 
 				if (Main.netMode != NetmodeID.MultiplayerClient) {
@@ -458,7 +458,7 @@ namespace TheDollorama.Content.NPCs.Boss
 					NPC.position += NPC.netOffset;
 
 					// Draw a line between the NPC and its destination, represented as dusts every 20 pixels
-					Dust.QuickDustLine(NPC.Center + toDestinationNormalized * NPC.width, FirstStageDestination, toDestination.Length() / 20f, Color.Yellow);
+					//Dust.QuickDustLine(NPC.Center + toDestinationNormalized * NPC.width, FirstStageDestination, toDestination.Length() / 20f, Color.Yellow);
 
 					NPC.position -= NPC.netOffset;
 				}
@@ -466,7 +466,7 @@ namespace TheDollorama.Content.NPCs.Boss
 			LastFirstStageDestination = FirstStageDestination;
 
 			// No damage during first phase
-			NPC.damage = 0;
+			NPC.damage = 6;
 
 			// Fade in based on remaining total minion life
 			float remainingShields = MinionHealthTotal / (float)MinionMaxHealthTotal;
@@ -482,9 +482,9 @@ namespace TheDollorama.Content.NPCs.Boss
 
 			Vector2 toPlayer = player.Center - NPC.Center;
 
-			float offsetX = 200f;
+			float offsetX = 20f;
 
-			Vector2 abovePlayer = player.Top + new Vector2(NPC.direction * offsetX, -NPC.height);
+			Vector2 abovePlayer = player.Bottom - new Vector2(0, -60) + new Vector2(NPC.direction * offsetX, -NPC.height);
 
 			Vector2 toAbovePlayer = abovePlayer - NPC.Center;
 			Vector2 toAbovePlayerNormalized = toAbovePlayer.SafeNormalize(Vector2.UnitY);
@@ -498,14 +498,15 @@ namespace TheDollorama.Content.NPCs.Boss
 				NPC.direction *= -1;
 			}
 
-			float speed = 8f;
+			float speed = 15f;
 			float inertia = 40f;
 
 			// If the boss is somehow below the player, move faster to catch up
+			/*
 			if (NPC.Top.Y > player.Bottom.Y) {
-				speed = 12f;
+				speed = 17f;
 			}
-
+			*/
 			Vector2 moveTo = toAbovePlayerNormalized * speed;
 			NPC.velocity = (NPC.velocity * (inertia - 1) + moveTo) / inertia;
 
@@ -521,7 +522,7 @@ namespace TheDollorama.Content.NPCs.Boss
 		private void DoSecondStage_SpawnEyes(Player player) {
 			// At 100% health, spawn every 90 ticks
 			// Drops down until 33% health to spawn every 30 ticks
-			float timerMax = Utils.Clamp((float)NPC.life / NPC.lifeMax, 0.33f, 1f) * 90;
+			float timerMax = Utils.Clamp((float)NPC.life / NPC.lifeMax, 0.33f, 1f) * 30;
 
 			SecondStageTimer_SpawnEyes++;
 			if (SecondStageTimer_SpawnEyes > timerMax) {
@@ -532,7 +533,7 @@ namespace TheDollorama.Content.NPCs.Boss
 				// Spawn projectile randomly below player, based on horizontal velocity to make kiting harder, starting velocity 1f upwards
 				// (The projectiles accelerate from their initial velocity)
 
-				float kitingOffsetX = Utils.Clamp(player.velocity.X * 16, -100, 100);
+				float kitingOffsetX = Utils.Clamp(player.velocity.X * 16, -150, 150);
 				Vector2 position = player.Bottom + new Vector2(kitingOffsetX + Main.rand.Next(-100, 100), Main.rand.Next(50, 100));
 
 				int type = ModContent.ProjectileType<MinionBossEye>();

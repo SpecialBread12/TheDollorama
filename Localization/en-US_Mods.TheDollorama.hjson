@@ -177,7 +177,7 @@ Items: {
 		Tooltip:
 			'''
 			Incease Damage and AttackSpeed by 80%
-			Increase RunningSpeed by 10
+			Increase RunningSpeed a lot
 			Increase Regen
 			Increase MinionSlot by 6
 			Increase MaxLife by 100
@@ -200,12 +200,12 @@ Items: {
 	}
 
 	MinionBossRelic: {
-		DisplayName: Minion Boss Relic
+		DisplayName: Supervisor Relic
 		Tooltip: ""
 	}
 
 	MinionBossTrophy: {
-		DisplayName: Minion Boss Trophy
+		DisplayName: Supervisor Trophy
 		Tooltip: ""
 	}
 
@@ -219,13 +219,13 @@ Items: {
 	}
 
 	MinionBossBag: {
-		DisplayName: Minion Boss Bag
+		DisplayName: Treasure Bag (Supervisor)
 		Tooltip: ""
 	}
 
 	MinionBossSummonItem: {
-		DisplayName: Minion Boss Summon Item
-		Tooltip: ""
+		DisplayName: Employee report
+		Tooltip: You reported an employee you monster, if you summit this to the higher up, the Supervisor will surely come.
 	}
 }
 
@@ -278,7 +278,7 @@ DamageClasses: {
 
 NPCs: {
 	ExamplePerson: {
-		DisplayName: Example Person
+		DisplayName: Third Key
 
 		TownNPCMood: {
 			Content: I am content.
@@ -292,7 +292,7 @@ NPCs: {
 			LoveNPC: I love {NPCName}.
 			LikeNPC: I like {NPCName}.
 			DislikeNPC: I dislike {NPCName}.
-			HateNPC: I hate {NPCName}.
+			HateNPC: I hate {NPCName}, they can go to hell.
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}
@@ -304,26 +304,26 @@ NPCs: {
 		DisplayName: Lazy Girl
 
 		TownNPCMood: {
-			Princess_LovesNPC: I like {NPCName}.
-			LikeNPC_Princess: I like {NPCName}.
-			HateNPC: I hate {NPCName}.
-			DislikeNPC: I dislike {NPCName}.
+			Princess_LovesNPC: I like {NPCName}, I can't hate her, my programming doesn't let me.
+			LikeNPC_Princess: I like {NPCName}, the autacity of this bitch.
+			HateNPC: I hate {NPCName}, I HATE EVERYONE.
+			DislikeNPC: I dislike {NPCName}, n***a fuck you.
 			LikeNPC: I like {NPCName}.
-			LoveNPC: I love {NPCName}.
-			DislikeBiome: I dislike {BiomeName}.
-			LikeBiome: I like {BiomeName}.
-			HateCrowded: I hate how crowded I am.
-			DislikeCrowded: I dislike how crowded I am.
-			LoveSpace: I love having so much space.
-			FarFromHome: I am too far from home.
-			NoHome: I hate not having a home.
-			Content: I am content.
+			LoveNPC: I love {NPCName}, they are my only friend.
+			DislikeBiome: I dislike {BiomeName}, there is no fucking tree.
+			LikeBiome: I like {BiomeName}, because it's easier to kill myself.
+			HateCrowded: Fuck this town, death would be better than this.
+			DislikeCrowded: There is so much people, fuck this.
+			LoveSpace: Finally some fucking peace.
+			FarFromHome: The fuck. Where am I ?.
+			NoHome: I want to kill myself.
+			Content: I am content, I could kill myself, like now.
 		}
 	}
 
 	Employee.DisplayName: Employee
-	MinionBossBody.DisplayName: Minion Boss Body
-	MinionBossMinion.DisplayName: Minion Boss Minion
+	MinionBossBody.DisplayName: Supervisor
+	MinionBossMinion.DisplayName: Gerant
 }
 
 Conditions.PlayerHasBoosterPack: Mods.TheDollorama.Conditions.PlayerHasBoosterPack

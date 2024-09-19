@@ -38,8 +38,10 @@ namespace TheDollorama.Content.Items.Accessories
 			player.statLifeMax2 += 100;
             player.statManaMax += 40;
             player.statManaMax2 += 40;
-			player.maxRunSpeed += 10;
+			player.maxRunSpeed += 8;
 			player.wingTimeMax += 200;
+			//player.respawnTimer -= 100;
+			//player.restorationDelayTime -= 100;
 			
 		}
         public override void AddRecipes()
