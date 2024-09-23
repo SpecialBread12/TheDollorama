@@ -34,7 +34,7 @@ namespace TheDollorama.Content.NPCs
 {
 	// [AutoloadHead] and NPC.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
 	[AutoloadHead]
-	public class ExamplePerson : ModNPC
+	public class AssistantTeamChief : ModNPC
 	{
 		public const string NormalShop = "Shop1";
         public const string BoostingShop = "Shop2";
@@ -62,17 +62,19 @@ namespace TheDollorama.Content.NPCs
 
 			NPCID.Sets.ShimmerTownTransform[Type] = true; // Allows for this NPC to have a different texture after touching the Shimmer liquid.
 
-			// Connects this NPC with a custom emote.
-			// This makes it when the NPC is in the world, other NPCs will "talk about him".
-			// By setting this you don't have to override the PickEmote method for the emote to appear.
-			//NPCID.Sets.FaceEmote[Type] = ModContent.EmoteBubbleType<ExamplePersonEmote>();
+            // Connects this NPC with a custom emote.
+            // This makes it when the NPC is in the world, other NPCs will "talk about him".
+            // By setting this you don't have to override the PickEmote method for the emote to appear.
+            //NPCID.Sets.FaceEmote[Type] = ModContent.EmoteBubbleType<ExamplePersonEmote>();
 
-			// Influences how the NPC looks in the Bestiary
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers() {
+            // Influences how the NPC looks in the Bestiary
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers() {
+				
+
 				Velocity = 1f, // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
 				Direction = 1 // -1 is left and 1 is right. NPCs are drawn facing the left by default but ExamplePerson will be drawn facing the right
-				// Rotation = MathHelper.ToRadians(180) // You can also change the rotation of an NPC. Rotation is measured in radians
-				// If you want to see an example of manually modifying these when the NPC is drawn, see PreDraw
+							  // Rotation = MathHelper.ToRadians(180) // You can also change the rotation of an NPC. Rotation is measured in radians
+							  // If you want to see an example of manually modifying these when the NPC is drawn, see PreDraw
 			};
 
 			NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
@@ -123,11 +125,11 @@ namespace TheDollorama.Content.NPCs
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
 				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("Hailing from a mysterious greyscale cube world, the Example Person is here to help you understand everything about tModLoader."),
+				new FlavorTextBestiaryInfoElement("They know a lot, from their multiple personnality to the item, they are your seller"),
 
 				// You can add multiple elements if you really wanted to
 				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("Mods.ExampleMod.Bestiary.ExamplePerson")
+				new FlavorTextBestiaryInfoElement("They sell boosting item and a bit more.")
 			});
 		}
 
@@ -137,11 +139,11 @@ namespace TheDollorama.Content.NPCs
 			// This code slowly rotates the NPC in the bestiary
 			// (simply checking NPC.IsABestiaryIconDummy and incrementing NPC.Rotation won't work here as it gets overridden by drawModifiers.Rotation each tick)
 			if (NPCID.Sets.NPCBestiaryDrawOffset.TryGetValue(Type, out NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers)) {
-				drawModifiers.Rotation += 0.001f;
+				//drawModifiers.Rotation += 0.001f;
 
 				// Replace the existing NPCBestiaryDrawModifiers with our new one with an adjusted rotation
-				NPCID.Sets.NPCBestiaryDrawOffset.Remove(Type);
-				NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+				//NPCID.Sets.NPCBestiaryDrawOffset.Remove(Type);
+				//NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
 			}
 
 			return true;

@@ -232,6 +232,11 @@ Items: {
 		DisplayName: Necronomicon
 		Tooltip: The one and only Necronomicon, capable of summoning one of the greatest dev of our time, not really, but beware, if you use this item, you might get more than you wanted.
 	}
+
+	StyroSword: {
+		DisplayName: Styrofoam Sword
+		Tooltip: Made of styrofoam, the only weapon to be sold to childrens.
+	}
 }
 
 Buffs: {
@@ -278,6 +283,11 @@ Buffs: {
 	CurseOfProgramming: {
 		DisplayName: Curse Of Programming
 		Description: The Curse of Programming, the rare weakness a dev has. Reduce Defense by 20, poison you, multiply your weapon base damage by 3.
+	}
+
+	Angered: {
+		DisplayName: Angered
+		Description: You are angry.
 	}
 }
 
@@ -360,18 +370,39 @@ NPCs: {
 		DisplayName: Dev
 
 		TownNPCMood: {
+			Content: Happiness is fake, but I am happy.
+			NoHome: How can I code my Mod without a home ?
+			FarFromHome: I am lost.
+			LoveSpace: I love being alone, it make me feel at peace.
+			DislikeCrowded: There is too much people, I will kill one of the soon.
+			HateCrowded: Bro, really ? I will make a genocide with the people of this town.
+			LikeBiome: I like {BiomeName}, it's almost magical.
+			DislikeBiome: I dislike {BiomeName}, well duh, the snow is shit on my cars.
+			LoveNPC: I love {NPCName}, I love them.
+			LikeNPC: I like {NPCName}.
+			DislikeNPC: I dislike {NPCName}.
+			HateNPC: I hate {NPCName}, they have 24 hour to leave or they are dead.
+			LikeNPC_Princess: I don't like {NPCName}, but I also don't hate her.
+			Princess_LovesNPC: Well shit {NPCName} made me a cake, she is freaking cool.
+		}
+	}
+
+	AssistantTeamChief: {
+		DisplayName: Assistant Team Chief
+
+		TownNPCMood: {
 			Content: I am content.
 			NoHome: I hate not having a home.
 			FarFromHome: I am too far from home.
 			LoveSpace: I love having so much space.
 			DislikeCrowded: I dislike how crowded I am.
 			HateCrowded: I hate how crowded I am.
-			LikeBiome: I like {BiomeName}.
+			LikeBiome: I like {BiomeName}, it's smell like Febreze.
 			DislikeBiome: I dislike {BiomeName}.
 			LoveNPC: I love {NPCName}.
 			LikeNPC: I like {NPCName}.
 			DislikeNPC: I dislike {NPCName}.
-			HateNPC: I hate {NPCName}.
+			HateNPC: I hate {NPCName}, they can go to hell.
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}

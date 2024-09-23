@@ -33,6 +33,32 @@ namespace TheDollorama.Content.Items.Consumables
 			Item.buffType = ModContent.BuffType<Buffs.CurseOfProgramming>(); // Specify an existing buff to be applied when used.
 			Item.buffTime = 600; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
 		}
+
+        public override bool CanUseItem(Player player)
+        {
+            // Check if the NPC is already present in the world
+            foreach (NPC npc in Main.npc)
+            {
+                if (npc.active && npc.type == ModContent.NPCType<NPCs.Dev>())
+                {
+                    return false; // NPC is already present, prevent the use of the item
+                }
+            }
+            return true; // NPC is not present, allow the item to be used
+        }
+
+        public override bool? UseItem(Player player)
+        {
+            // Spawn the NPC if it's not present
+            if (Main.netMode != NetmodeID.MultiplayerClient)
+            {
+                int spawnX = (int)(player.position.X + player.width / 2) / 16;
+                int spawnY = (int)(player.position.Y + player.height / 2) / 16;
+
+                NPC.NewNPC(null, spawnX * 16, spawnY * 16, ModContent.NPCType<NPCs.Dev>());
+            }
+            return true; // NPC was successfully summoned, consume the item
+        }
         public override void AddRecipes()
         {
             CreateRecipe()

@@ -116,7 +116,7 @@ namespace TheDollorama
 
 
                 case MessageType.ExampleTeleportToStatue:
-					if (Main.npc[reader.ReadByte()].ModNPC is ExamplePerson person && person.NPC.active) {
+					if (Main.npc[reader.ReadByte()].ModNPC is AssistantTeamChief person && person.NPC.active) {
 						person.StatueTeleport();
 					}
 
