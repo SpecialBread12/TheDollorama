@@ -49,7 +49,7 @@ namespace TheDollorama.Content.Items.Consumables
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
 			CreateRecipe()
-                .AddIngredient(ItemID.GoldCoin, 10)
+                .AddIngredient(ItemID.GoldCoin, 1)
                 .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
 				.Register();
 		}

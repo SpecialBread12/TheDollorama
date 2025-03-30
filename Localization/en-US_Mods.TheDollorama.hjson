@@ -186,7 +186,7 @@ Items: {
 			Give Immunity to Knockback
 			Increase WingTime
 			Reduce Delay Before Regen Start
-			The Badge of Josee Dollorama, one of the rare thing still liking him to this mortal realm.
+			The Badge of Josee Dollorama, one of the rare thing still linking him to this mortal realm.
 			'''
 	}
 
@@ -236,6 +236,11 @@ Items: {
 	StyroSword: {
 		DisplayName: Styrofoam Sword
 		Tooltip: Made of styrofoam, the only weapon to be sold to childrens.
+	}
+
+	CodeBook: {
+		DisplayName: Code Book
+		Tooltip: The book of coding, bring you help in your adventure.
 	}
 }
 
@@ -325,7 +330,7 @@ NPCs: {
 
 		TownNPCMood: {
 			Princess_LovesNPC: I like {NPCName}, I can't hate her, my programming doesn't let me.
-			LikeNPC_Princess: I like {NPCName}, the autacity of this bitch.
+			LikeNPC_Princess: I like {NPCName}, the audacity of this bitch.
 			HateNPC: I hate {NPCName}, I HATE EVERYONE.
 			DislikeNPC: I dislike {NPCName}, n***a fuck you.
 			LikeNPC: I like {NPCName}.

@@ -72,7 +72,8 @@ namespace TheDollorama.Content.NPCs
 			//npcLoot.Add(ItemDropRule.Common(ItemID.Confetti, 100)); // 1% chance to drop Confetti
 			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<BoosterPack>(), 1000));
 			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CutPotion>(), 100));
-		}
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MinionBossSummonItem>(), 100));
+        }
 		/*
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
 			return SpawnCondition.OverworldNightMonster.Chance * 0.2f; // Spawn with 1/5th the chance of a regular zombie.

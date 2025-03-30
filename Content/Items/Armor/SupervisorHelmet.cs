@@ -42,7 +42,7 @@ namespace TheDollorama.Content.Items.Armor
 		// UpdateArmorSet allows you to give set bonuses to the armor.
 		public override void UpdateArmorSet(Player player) {
 			player.setBonus = SetBonusText.Value; // This is the setbonus tooltip: "Increases dealt damage by 20%"
-			player.GetDamage(DamageClass.Generic) += 25f; // Increase dealt damage for all weapon classes by 20%
+			player.GetDamage(DamageClass.Generic) += 0.20f; // Increase dealt damage for all weapon classes by 20%
             player.GetAttackSpeed(DamageClass.Generic) += 0.30f;
             player.statDefense += 5;
             player.buffImmune[ModContent.BuffType<Cuts>()] = true;

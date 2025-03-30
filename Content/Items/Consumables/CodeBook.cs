@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace TheDollorama.Content.Items.Consumables
 {
-	public class Depression : ModItem
+	public class CodeBook : ModItem
 	{
 		public override void SetStaticDefaults() {
 			Item.ResearchUnlockCount = 20;
@@ -21,17 +21,24 @@ namespace TheDollorama.Content.Items.Consumables
 		public override void SetDefaults() {
 			Item.width = 20;
 			Item.height = 26;
-			Item.useStyle = ItemUseStyleID.EatFood;
+			Item.useStyle = ItemUseStyleID.HoldUp;
 			Item.useAnimation = 15;
 			Item.useTime = 15;
 			Item.useTurn = true;
-			Item.UseSound = SoundID.Roar;
+			Item.UseSound = SoundID.Item3;
 			Item.maxStack = Item.CommonMaxStack;
 			Item.consumable = true;
-			Item.rare = ItemRarityID.Red;
+			Item.rare = ItemRarityID.Pink;
 			Item.value = Item.buyPrice(gold: 1);
-			Item.buffType = ModContent.BuffType<Buffs.Depressed>(); // Specify an existing buff to be applied when used.
-			Item.buffTime = 3000; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
+			Item.buffType = ModContent.BuffType<Buffs.CurseOfProgramming>(); // Specify an existing buff to be applied when used.
+			Item.buffTime = 6000; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
 		}
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ItemID.GoldCoin, 5)
+                .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
+                .Register();
+        }
+    }
 }
