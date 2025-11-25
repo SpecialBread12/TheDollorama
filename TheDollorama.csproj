@@ -11,6 +11,7 @@
 	<!-- References -->
 	<ItemGroup>
 	  <None Remove="Content\Buffs\Depressed.png" />
+	  <None Remove="Content\Items\Consumables\CodeBook.png" />
 	  <None Remove="Content\Items\Consumables\Depression.png" />
 	  <None Remove="Content\Items\Weapons\Dollar.png" />
 	</ItemGroup>

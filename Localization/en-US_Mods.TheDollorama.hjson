@@ -323,7 +323,10 @@ NPCs: {
 		}
 	}
 
-	ExampleTownPet.DisplayName: Example Town Pet
+	ExampleTownPet: {
+		DisplayName: Example Town Pet
+		Census.SpawnCondition: Conditions unknown
+	}
 
 	K: {
 		DisplayName: Lazy Girl
@@ -344,6 +347,8 @@ NPCs: {
 			NoHome: I want to kill myself.
 			Content: I am content, I could kill myself, like now.
 		}
+
+		Census.SpawnCondition: Conditions unknown
 	}
 
 	Employee.DisplayName: Employee
@@ -390,6 +395,8 @@ NPCs: {
 			LikeNPC_Princess: I don't like {NPCName}, but I also don't hate her.
 			Princess_LovesNPC: Well shit {NPCName} made me a cake, she is freaking cool.
 		}
+
+		Census.SpawnCondition: Conditions unknown
 	}
 
 	AssistantTeamChief: {
@@ -411,6 +418,8 @@ NPCs: {
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}
+
+		Census.SpawnCondition: Conditions unknown
 	}
 }
 
