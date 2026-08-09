@@ -34,26 +34,7 @@ namespace TheDollorama.Content.Items.Armor
 			Item.defense = 3; // The amount of defense the item will give when equipped
 		}
 
-		// IsArmorSet determines what armor pieces are needed for the setbonus to take effect
-		public override bool IsArmorSet(Item head, Item body, Item legs) {
-			return body.type == ModContent.ItemType<DolloramaBreastplate>() && legs.type == ModContent.ItemType<DolloramaLeggings>();
-		}
-
-		// UpdateArmorSet allows you to give set bonuses to the armor.
-		public override void UpdateArmorSet(Player player) {
-			player.setBonus = SetBonusText.Value; // This is the setbonus tooltip: "Increases dealt damage by 20%"
-			player.GetDamage(DamageClass.Generic) += AdditiveGenericDamageBonus / 100f; // Increase dealt damage for all weapon classes by 20%
-            player.statDefense += 3;
-            player.buffImmune[ModContent.BuffType<Cuts>()] = true;
-        }
-
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-		public override void AddRecipes() {
-			CreateRecipe()
-                .AddIngredient(ModContent.ItemType<CutPotion>(), 1)
-                .AddIngredient(ItemID.GoldCoin, 8)
-                .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
-				.Register();
-		}
+
 	}
 }

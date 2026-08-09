@@ -47,20 +47,20 @@ Items: {
 	}
 
 	DolloramaHelmet: {
-		SetBonus:
-			'''
-			Your damage is increased by 20%
-			You get 3 more defense
-			You are immune to cuts
-			You feel stronger, you could work 8h a day, 5 days a week!
-			'''
 		DisplayName: Worker cap
 		Tooltip: Protecting your head is important, but in a Dollorama, really?
+		SetBonus: Mods.TheDollorama.Items.DolloramaHelmet.SetBonus
 	}
 
 	DolloramaBreastplate: {
 		DisplayName: Worker T-shirt
 		Tooltip: Well, we all need to wear something
+		SetBonus:
+			'''
+			You get 3 more defense
+			You are immune to cuts
+			You feel stronger, you could work 8h a day, 5 days a week!
+			'''
 	}
 
 	DolloramaLeggings: {
@@ -242,6 +242,11 @@ Items: {
 		DisplayName: Code Book
 		Tooltip: The book of coding, bring you help in your adventure.
 	}
+
+	SilicaPack: {
+		DisplayName: Silica Pack
+		Tooltip: ""
+	}
 }
 
 Buffs: {
@@ -293,6 +298,11 @@ Buffs: {
 	Angered: {
 		DisplayName: Angered
 		Description: You are angry.
+	}
+
+	Drying: {
+		DisplayName: Drying
+		Description: You silice little goose
 	}
 }
 

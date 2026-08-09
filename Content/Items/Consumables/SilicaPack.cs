@@ -30,9 +30,10 @@ namespace TheDollorama.Content.Items.Consumables
         }
 
 		public override bool? UseItem(Player player) {
-            //player.AddBuff(ModContent.BuffType<Buffs.EnergyDrink>(), 6000);
-            return true;
-		}
+            Item.buffType = ModContent.BuffType<Buffs.Drying>(); // Specify an existing buff to be applied when used.
+            Item.buffTime = 300; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
+			return true;
+        }
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {

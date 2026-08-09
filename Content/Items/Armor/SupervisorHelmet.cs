@@ -51,11 +51,19 @@ namespace TheDollorama.Content.Items.Armor
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
-			CreateRecipe()
-                .AddIngredient(ModContent.ItemType<Depression>(), 3)
-                .AddIngredient(ItemID.GoldCoin, 30)
-                .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
-				.Register();
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient(ModContent.ItemType<Depression>(), 3);
+				recipe.AddIngredient(ItemID.GoldCoin, 30);
+				recipe.AddIngredient(ItemID.SilverBar, 30);
+                    // Empêche la consommation du permis
+				recipe.AddConsumeItemCallback((Recipe r, int type, ref int amount) =>
+					{
+						if (type == ModContent.ItemType<Depression>())
+						amount = 0; // ne consomme aucun exemplaire
+
+					 });
+			recipe.AddTile<Tiles.Furniture.CommonDolloWorkbench>();
+				recipe.Register();
 		}
 	}
 }
