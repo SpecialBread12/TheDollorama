@@ -62,7 +62,7 @@ namespace TheDollorama.Content.Items.Armor
 						amount = 0; // ne consomme aucun exemplaire
 
 					 });
-			recipe.AddTile<Tiles.Furniture.CommonDolloWorkbench>();
+			recipe.AddTile<Tiles.Furniture.PreHardModePallet>();
 				recipe.Register();
 		}
 	}

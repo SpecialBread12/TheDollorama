@@ -156,16 +156,17 @@ namespace TheDollorama.Content.NPCs
 
 		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
 		{
-			if (modifiers.DamageType.CountsAsClass(DamageClass.Magic))
-			{
-				// This example shows how PartyZombie reduces magic damage by 75%. We use FinalDamage here rather than SourceDamage since we are affecting how the npc reacts to the damage.
-				// Conceptually, the source dealing the damage isn't interpreted as weaker, but rather this NPC has a resistance to this damage source.
-				modifiers.FinalDamage *= 0.25f;
-			}
-			if (modifiers.DamageType.CountsAsClass(ModContent.GetInstance<SprayDamage>()))
-			{
+            if (modifiers.DamageType?.CountsAsClass(DamageClass.Magic) == true)
+            {
+                // This example shows how PartyZombie reduces magic damage by 75%. We use FinalDamage here rather than SourceDamage since we are affecting how the npc reacts to the damage.
+                // Conceptually, the source dealing the damage isn't interpreted as weaker, but rather this NPC has a resistance to this damage source.
+                modifiers.FinalDamage *= 0.25f;
+            }
+
+            if (modifiers.DamageType?.CountsAsClass(ModContent.GetInstance<SprayDamage>()) == true)
+            {
                 modifiers.FinalDamage *= 2f;
             }
-		}
+        }
 	}
 }

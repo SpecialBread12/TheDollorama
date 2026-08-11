@@ -43,7 +43,7 @@ namespace TheDollorama.Content.Items.Consumables
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DolloramaBreastplate>(), 10));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DolloramaLeggings>(), 10));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Depression>(), 1, 1, 1));
-			itemLoot.Add(ItemDropRule.CoinsBasedOnNPCValue(ModContent.NPCType<MinionBossBody>()));
+			itemLoot.Add(ItemDropRule.CoinsBasedOnNPCValue(ModContent.NPCType<SupervisorBody>()));
 		}
 	}
 }

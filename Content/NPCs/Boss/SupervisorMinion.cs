@@ -4,12 +4,13 @@ using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheDollorama.Common.Systems;
 
 namespace TheDollorama.Content.NPCs.Boss
 {
 	// The minions spawned when the body spawns
 	// Please read MinionBossBody.cs first for important comments, they won't be explained here again
-	public class MinionBossMinion : ModNPC
+	public class SupervisorMinion : ModNPC
 	{
 		// This is a neat trick that uses the fact that NPCs have all NPC.ai[] values set to 0f on spawn (if not otherwise changed).
 		// We set ParentIndex to a number in the body after spawning it. If we set ParentIndex to 3, NPC.ai[0] will be 4. If NPC.ai[0] is 0, ParentIndex will be -1.
@@ -32,7 +33,7 @@ namespace TheDollorama.Content.NPCs.Boss
 
 		// Helper method to determine the body type
 		public static int BodyType() {
-			return ModContent.NPCType<MinionBossBody>();
+			return ModContent.NPCType<SupervisorBody>();
 		}
 
 		public override void SetStaticDefaults() {
@@ -105,7 +106,8 @@ namespace TheDollorama.Content.NPCs.Boss
 			if (Main.rand.NextBool(2) && closestPlayer.statLife < closestPlayer.statLifeMax2) {
 				Item.NewItem(NPC.GetSource_Loot(), NPC.getRect(), ItemID.Heart);
 			}
-		}
+            NPC.SetEventFlagCleared(ref DownedBossSystem.downedSupervisor, -1);
+        }
 
 		public override void HitEffect(NPC.HitInfo hit) {
 			if (NPC.life <= 0) {

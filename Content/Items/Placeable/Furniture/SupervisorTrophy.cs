@@ -4,11 +4,11 @@ using Terraria.ModLoader;
 
 namespace TheDollorama.Content.Items.Placeable.Furniture
 {
-	public class MinionBossTrophy : ModItem
+	public class SupervisorTrophy : ModItem
 	{
 		public override void SetDefaults() {
 			// Vanilla has many useful methods like these, use them! This substitutes setting Item.createTile and Item.placeStyle as well as setting a few values that are common across all placeable items
-			Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.MinionBossTrophy>());
+			Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.SupervisorTrophy>());
 
 			Item.width = 32;
 			Item.height = 32;

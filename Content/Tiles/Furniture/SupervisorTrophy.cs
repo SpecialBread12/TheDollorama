@@ -8,7 +8,7 @@ using Terraria.ObjectData;
 namespace TheDollorama.Content.Tiles.Furniture
 {
 	// Simple 3x3 tile that can be placed on a wall
-	public class MinionBossTrophy : ModTile
+	public class SupervisorTrophy : ModTile
 	{
 		public override void SetStaticDefaults() {
 			Main.tileFrameImportant[Type] = true;

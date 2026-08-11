@@ -247,6 +247,35 @@ Items: {
 		DisplayName: Silica Pack
 		Tooltip: ""
 	}
+
+	DollaramaBox: {
+		DisplayName: Dollarama Box
+		Tooltip: Contain all the goodies, sadly some of it need extra permission
+	}
+
+	SupervisorRelic: {
+		DisplayName: Supervisor Relic
+		Tooltip: ""
+	}
+
+	SupervisorTrophy: {
+		DisplayName: Supervisor Trophy
+		Tooltip: ""
+	}
+
+	FourFun: {
+		Tooltip: 4Fun a Dollarama brand chocolat that was discontinued for unkown reason
+		DisplayName: 4Fun
+	}
+
+	StinkCloud: {
+		DisplayName: Stink Cloud
+		Tooltip:
+			'''
+			Create a cloud of smell that deal small damage to EVERYTHING around you.
+			It smell like fish. You should be able to keep enemy at bay with this. It pulse with energy from unwashed ass
+			'''
+	}
 }
 
 Buffs: {
@@ -304,6 +333,11 @@ Buffs: {
 		DisplayName: Drying
 		Description: You silice little goose
 	}
+
+	CurseOfFun: {
+		Description: You have eaten a 4Fun, the reason they have been removed is unknown, this might be one
+		DisplayName: Curse Of Fun
+	}
 }
 
 DamageClasses: {
@@ -358,7 +392,7 @@ NPCs: {
 			Content: I am content, I could kill myself, like now.
 		}
 
-		Census.SpawnCondition: Conditions unknown
+		Census.SpawnCondition: Depression
 	}
 
 	Employee.DisplayName: Employee
@@ -431,6 +465,9 @@ NPCs: {
 
 		Census.SpawnCondition: Conditions unknown
 	}
+
+	SupervisorBody.DisplayName: Michel The Supervisor
+	SupervisorMinion.DisplayName: Supervisor's Minion
 }
 
 Conditions.PlayerHasBoosterPack: Mods.TheDollorama.Conditions.PlayerHasBoosterPack

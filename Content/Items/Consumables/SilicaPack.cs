@@ -39,7 +39,7 @@ namespace TheDollorama.Content.Items.Consumables
 		public override void AddRecipes() {
 			CreateRecipe()
                 .AddIngredient(ItemID.GoldCoin, 1)
-                .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
+                .AddTile<Tiles.Furniture.PreHardModePallet>()
 				.Register();
 		}
 	}

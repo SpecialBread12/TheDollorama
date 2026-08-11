@@ -37,7 +37,7 @@ namespace TheDollorama.Content.BossBars
 			life = npc.life;
 			lifeMax = npc.lifeMax;
 
-			if (npc.ModNPC is MinionBossBody body) {
+			if (npc.ModNPC is SupervisorBody body) {
 				// We did all the calculation work on RemainingShields inside the body NPC already so we just have to fetch the value again
 				shield = body.MinionHealthTotal;
 				shieldMax = body.MinionMaxHealthTotal;

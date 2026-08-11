@@ -7,7 +7,7 @@ using Terraria.ObjectData;
 
 namespace TheDollorama.Content.Tiles.Furniture
 {
-	public class CommonDolloWorkbench : ModTile
+	public class PreHardModePallet : ModTile
 	{
 		public override void SetStaticDefaults() {
 			// Properties

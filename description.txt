@@ -19,8 +19,6 @@ Story
 - (Tony)
 - District Manager
 - Supervisor
-- Manager
-- Assistant Manager
 
 Items :
 - Explosive

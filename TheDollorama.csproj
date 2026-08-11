@@ -7,6 +7,9 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <AdditionalFiles Remove="Content\Items\Consumables\FourFun.png" />
+	</ItemGroup>
 
 	<!-- References -->
 	<ItemGroup>

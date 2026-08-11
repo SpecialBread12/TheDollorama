@@ -46,7 +46,7 @@ namespace TheDollorama.Content.Items.Weapons
 		public override void AddRecipes() {
 			CreateRecipe()
 				.AddIngredient(ItemID.SilverCoin, 25)
-				.AddTile<Tiles.Furniture.CommonDolloWorkbench>()
+				.AddTile<Tiles.Furniture.PreHardModePallet>()
 				.Register();
 		}
 	}

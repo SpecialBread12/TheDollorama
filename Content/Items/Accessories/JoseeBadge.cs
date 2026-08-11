@@ -51,7 +51,7 @@ namespace TheDollorama.Content.Items.Accessories
                 .AddIngredient(ModContent.ItemType<FruitPunchRockStar>(), 5)
                 .AddIngredient(ModContent.ItemType<BoosterPack>(), 5)
                 .AddIngredient(ItemID.PlatinumCoin, 50)
-                .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
+                .AddTile<Tiles.Furniture.PreHardModePallet>()
                 .Register();
         }
     }

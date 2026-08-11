@@ -57,7 +57,7 @@ namespace TheDollorama.Content.Items.Armor
 			CreateRecipe()
                 .AddIngredient(ModContent.ItemType<CutPotion>(), 1)
                 .AddIngredient(ItemID.GoldCoin, 14)
-                .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
+                .AddTile<Tiles.Furniture.PreHardModePallet>()
 				.Register();
 		}
 	}

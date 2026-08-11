@@ -35,7 +35,7 @@ namespace TheDollorama.Content.Items.Armor
 			CreateRecipe()
                 .AddIngredient(ModContent.ItemType<Depression>(), 5)
                 .AddIngredient(ItemID.GoldCoin, 35)
-                .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
+                .AddTile<Tiles.Furniture.PreHardModePallet>()
 				.Register();
 		}
 	}

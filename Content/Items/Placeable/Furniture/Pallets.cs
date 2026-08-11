@@ -10,7 +10,7 @@ namespace TheDollorama.Content.Items.Placeable.Furniture
 			// ModContent.TileType<Tiles.Furniture.ExampleWorkbench>() retrieves the id of the tile that this item should place when used.
 			// DefaultToPlaceableTile handles setting various Item values that placeable items use
 			// Hover over DefaultToPlaceableTile in Visual Studio to read the documentation!
-			Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.CommonDolloWorkbench>());
+			Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.Furniture.PreHardModePallet>());
 			Item.width = 36; // The item texture's width
 			Item.height = 8; // The item texture's height
 			Item.value = 150;

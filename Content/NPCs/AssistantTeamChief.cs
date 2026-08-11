@@ -224,7 +224,7 @@ namespace TheDollorama.Content.NPCs
 				"Jordan",
 				"Claudine",
 				"Maude",
-				"Hugo"
+				"Cheik"
 			};
 		}
 
@@ -249,14 +249,13 @@ namespace TheDollorama.Content.NPCs
 				chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.PartyGirlDialogue", Main.npc[partyGirl].GivenName));
 			}
 			// These are things that the NPC has a chance of telling you when you talk to it.
-			chat.Add(Language.GetTextValue("What's up my man, came for your daily refill of Febreze"));
+			chat.Add(Language.GetTextValue("What's up, came for your daily refill of Febreze"));
 
-			if(npcName == "Claudine") { chat.Add(Language.GetTextValue("We must work harder, faster, FASTER")); }
+			if(npcName == "Claudine") 
+			{ chat.Add(Language.GetTextValue("We must work harder, faster, FASTER")); }
 
-            if (npcName == "Jordan") 
-			{ 
-				chat.Add(Language.GetTextValue("I will slug you")); 
-			}
+            if(npcName == "Jordan") 
+			{ chat.Add(Language.GetTextValue("I will slug you")); }
 			/*
             NumberOfTimesTalkedTo++;
 			if (NumberOfTimesTalkedTo >= 10) {

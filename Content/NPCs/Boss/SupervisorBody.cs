@@ -22,7 +22,7 @@ namespace TheDollorama.Content.NPCs.Boss
 {
 	// The main part of the boss, usually referred to as "body"
 	[AutoloadBossHead] // This attribute looks for a texture called "ClassName_Head_Boss" and automatically registers it as the NPC boss head icon
-	public class MinionBossBody : ModNPC
+	public class SupervisorBody : ModNPC
 	{
 		// This boss has a second phase and we want to give it a second boss head icon, this variable keeps track of the registered texture from Load().
 		// It is applied in the BossHeadSlot hook when the boss is in its second stage
@@ -75,7 +75,7 @@ namespace TheDollorama.Content.NPCs.Boss
 
 		// Helper method to determine the minion type
 		public static int MinionType() {
-			return ModContent.NPCType<MinionBossMinion>();
+			return ModContent.NPCType<SupervisorMinion>();
 		}
 
 		// Helper method to determine the amount of minions summoned
@@ -179,7 +179,7 @@ namespace TheDollorama.Content.NPCs.Boss
 			// 4. Master Mode (relic first, pet last, everything else inbetween)
 
 			// Trophies are spawned with 1/10 chance
-			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Placeable.Furniture.MinionBossTrophy>(), 10));
+			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Placeable.Furniture.SupervisorTrophy>(), 10));
 
 			// All the Classic Mode drops here are based on "not expert", meaning we use .OnSuccess() to add them into the rule, which then gets added
 			LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
@@ -213,7 +213,7 @@ namespace TheDollorama.Content.NPCs.Boss
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<MinionBossBag>()));
 
 			// ItemDropRule.MasterModeCommonDrop for the relic
-			npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.Furniture.MinionBossRelic>()));
+			npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.Furniture.SupervisorRelic>()));
 
 			// ItemDropRule.MasterModeDropOnAllPlayers for the pet
 			//npcLoot.Add(ItemDropRule.MasterModeDropOnAllPlayers(ModContent.ItemType<MinionBossPetItem>(), 4));
@@ -227,7 +227,7 @@ namespace TheDollorama.Content.NPCs.Boss
 			}
 			*/
 			// This sets downedMinionBoss to true, and if it was false before, it initiates a lantern night
-			NPC.SetEventFlagCleared(ref DownedBossSystem.downedMinionBoss, -1);
+			NPC.SetEventFlagCleared(ref DownedBossSystem.downedSupervisor, -1);
 
 			// Since this hook is only ran in singleplayer and serverside, we would have to sync it manually.
 			// Thankfully, vanilla sends the MessageID.WorldData packet if a BOSS was killed automatically, shortly after this hook is ran
@@ -356,13 +356,13 @@ namespace TheDollorama.Content.NPCs.Boss
 
 			MinionMaxHealthTotal = 0;
 			for (int i = 0; i < count; i++) {
-				NPC minionNPC = NPC.NewNPCDirect(entitySource, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<MinionBossMinion>(), NPC.whoAmI);
+				NPC minionNPC = NPC.NewNPCDirect(entitySource, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SupervisorMinion>(), NPC.whoAmI);
 				if (minionNPC.whoAmI == Main.maxNPCs)
 					continue; // spawn failed due to spawn cap
 
 				// Now that the minion is spawned, we need to prepare it with data that is necessary for it to work
 				// This is not required usually if you simply spawn NPCs, but because the minion is tied to the body, we need to pass this information to it
-				MinionBossMinion minion = (MinionBossMinion)minionNPC.ModNPC;
+				SupervisorMinion minion = (SupervisorMinion)minionNPC.ModNPC;
 				minion.ParentIndex = NPC.whoAmI; // Let the minion know who the "parent" is
 				minion.PositionOffset = i / (float)count; // Give it a separate position offset
 
@@ -388,7 +388,7 @@ namespace TheDollorama.Content.NPCs.Boss
 			}
 
 			foreach (var otherNPC in Main.ActiveNPCs) {
-				if (otherNPC.type == MinionType() && otherNPC.ModNPC is MinionBossMinion minion) {
+				if (otherNPC.type == MinionType() && otherNPC.ModNPC is SupervisorMinion minion) {
 					if (minion.ParentIndex == NPC.whoAmI) {
 						MinionHealthTotal += otherNPC.life;
 					}

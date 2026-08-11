@@ -33,7 +33,7 @@ namespace TheDollorama.Content.Items.Weapons
         {
             CreateRecipe()
                 .AddIngredient(ItemID.DirtBlock, 10)
-                .AddTile<Tiles.Furniture.CommonDolloWorkbench>()
+                .AddTile<Tiles.Furniture.PreHardModePallet>()
                 .Register();
         }
         

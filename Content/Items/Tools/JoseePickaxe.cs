@@ -57,7 +57,7 @@ namespace TheDollorama.Content.Items.Tools
 		public override void AddRecipes() {
 			CreateRecipe()
 				//.AddIngredient<ExampleItem>()
-				.AddTile<Tiles.Furniture.CommonDolloWorkbench>()
+				.AddTile<Tiles.Furniture.PreHardModePallet>()
 				.Register();
 		}
 	}

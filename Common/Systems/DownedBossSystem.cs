@@ -12,19 +12,19 @@ namespace TheDollorama.Common.Systems
 	// Saving and loading these flags requires TagCompounds, a guide exists on the wiki: https://github.com/tModLoader/tModLoader/wiki/Saving-and-loading-using-TagCompound
 	public class DownedBossSystem : ModSystem
 	{
-		public static bool downedMinionBoss = false;
+		public static bool downedSupervisor = false;
 		// public static bool downedOtherBoss = false;
 
 		public override void ClearWorld() {
-			downedMinionBoss = false;
+			downedSupervisor = false;
 			// downedOtherBoss = false;
 		}
 
 		// We save our data sets using TagCompounds.
 		// NOTE: The tag instance provided here is always empty by default.
 		public override void SaveWorldData(TagCompound tag) {
-			if (downedMinionBoss) {
-				tag["downedMinionBoss"] = true;
+			if (downedSupervisor) {
+				tag["downedSupervisor"] = true;
 			}
 
 			// if (downedOtherBoss) {
@@ -33,14 +33,14 @@ namespace TheDollorama.Common.Systems
 		}
 
 		public override void LoadWorldData(TagCompound tag) {
-			downedMinionBoss = tag.ContainsKey("downedMinionBoss");
+			downedSupervisor = tag.ContainsKey("downedMinionBoss");
 			// downedOtherBoss = tag.ContainsKey("downedOtherBoss");
 		}
 
 		public override void NetSend(BinaryWriter writer) {
 			// Order of operations is important and has to match that of NetReceive
 			var flags = new BitsByte();
-			flags[0] = downedMinionBoss;
+			flags[0] = downedSupervisor;
 			// flags[1] = downedOtherBoss;
 			writer.Write(flags);
 
@@ -92,7 +92,7 @@ namespace TheDollorama.Common.Systems
 		public override void NetReceive(BinaryReader reader) {
 			// Order of operations is important and has to match that of NetSend
 			BitsByte flags = reader.ReadByte();
-			downedMinionBoss = flags[0];
+			downedSupervisor = flags[0];
 			// downedOtherBoss = flags[1];
 
 			// As mentioned in NetSend, BitBytes can contain up to 8 values. If you have more, be sure to read the additional data:
