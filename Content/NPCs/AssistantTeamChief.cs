@@ -29,6 +29,7 @@ using Terraria.ModLoader.IO;
 using Terraria.Utilities;
 using TheDollorama.Content.Items.Consumables;
 using TheDollorama.Content.Items.Weapons;
+using TheDollorama.Content.Items.Accessories;
 
 namespace TheDollorama.Content.NPCs
 {
@@ -307,27 +308,31 @@ namespace TheDollorama.Content.NPCs
 		// Not completely finished, but below is what the NPC will sell
 		public override void AddShops() {
 			var npcShop = new NPCShop(Type, NormalShop)
-				.Add<BoosterPack>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))));
-                //.Add<DamageBoosterMelee>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
-                //.Add<DamageBoosterMagic>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
-                //.Add<DamageBoosterRanged>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
-                //.Add<DamageBoosterSummon>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))));
-                //.Add<EquipMaterial>()
-                //.Add<BossItem>()
-                //.Add(new Item(ModContent.ItemType<Items.Placeable.Furniture.ExampleWorkbench>()) { shopCustomPrice = Item.buyPrice(copper: 15) }) // This example sets a custom price, ExampleNPCShop.cs has more info on custom prices and currency. 
-                //.Add<Items.Placeable.Furniture.ExampleChair>()
-                //.Add<Items.Placeable.Furniture.ExampleDoor>()
-                //.Add<Items.Placeable.Furniture.ExampleBed>()
-                //.Add<Items.Placeable.Furniture.ExampleChest>()
-                //.Add<Items.Tools.ExamplePickaxe>()
-                //.Add<Items.Tools.ExampleHamaxe>()
-                //.Add<Items.Consumables.ExampleHealingPotion>(new Condition("Mods.ExampleMod.Conditions.PlayerHasLifeforceBuff", () => Main.LocalPlayer.HasBuff(BuffID.Lifeforce)))
-                //.Add<Items.Weapons.ExampleSword>(Condition.MoonPhasesQuarter0)
-                //.Add<ExampleGun>(Condition.MoonPhasesQuarter1)
-                //.Add<Items.Ammo.ExampleBullet>(Condition.MoonPhasesQuarter1)
-                //.Add<Items.Weapons.ExampleStaff>(ExampleConditions.DownedMinionBoss)
-                //.Add<ExampleOnBuyItem>()
-                //.Add<Items.Weapons.ExampleYoyo>(Condition.IsNpcShimmered); // Let's sell an yoyo if this NPC is shimmered!
+				.Add(new Item(ModContent.ItemType<Items.Consumables.DollaramaBox>()) { shopCustomPrice = Item.buyPrice(copper: 200) })
+                .Add<StinkCloud>((new Condition("Mods.TheDollorama.Conditions.PlayerHasCard10", () => Main.LocalPlayer.HasItem(ModContent.ItemType<Card10>()))))
+				.Add<FebrezeHeavyDuty>((new Condition("Mods.TheDollorama.Conditions.PlayerHasCard25", () => Main.LocalPlayer.HasItem(ModContent.ItemType<Card25>()))))
+				.Add<Dollar>((new Condition("Mods.TheDollorama.Conditions.PlayerHasCard50", () => Main.LocalPlayer.HasItem(ModContent.ItemType<Card50>()))));
+				//.Add<BoosterPack>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
+            //.Add<DamageBoosterMelee>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
+            //.Add<DamageBoosterMagic>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
+            //.Add<DamageBoosterRanged>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))))
+            //.Add<DamageBoosterSummon>((new Condition("Mods.TheDollorama.Conditions.PlayerHasBoosterPack", () => Main.LocalPlayer.HasItem(ModContent.ItemType<BoosterPack>()))));
+            //.Add<EquipMaterial>()
+            //.Add<BossItem>()
+            //.Add(new Item(ModContent.ItemType<Items.Placeable.Furniture.ExampleWorkbench>()) { shopCustomPrice = Item.buyPrice(copper: 15) }) // This example sets a custom price, ExampleNPCShop.cs has more info on custom prices and currency. 
+            //.Add<Items.Placeable.Furniture.ExampleChair>()
+            //.Add<Items.Placeable.Furniture.ExampleDoor>()
+            //.Add<Items.Placeable.Furniture.ExampleBed>()
+            //.Add<Items.Placeable.Furniture.ExampleChest>()
+            //.Add<Items.Tools.ExamplePickaxe>()
+            //.Add<Items.Tools.ExampleHamaxe>()
+            //.Add<Items.Consumables.ExampleHealingPotion>(new Condition("Mods.ExampleMod.Conditions.PlayerHasLifeforceBuff", () => Main.LocalPlayer.HasBuff(BuffID.Lifeforce)))
+            //.Add<Items.Weapons.ExampleSword>(Condition.MoonPhasesQuarter0)
+            //.Add<ExampleGun>(Condition.MoonPhasesQuarter1)
+            //.Add<Items.Ammo.ExampleBullet>(Condition.MoonPhasesQuarter1)
+            //.Add<Items.Weapons.ExampleStaff>(ExampleConditions.DownedMinionBoss)
+            //.Add<ExampleOnBuyItem>()
+            //.Add<Items.Weapons.ExampleYoyo>(Condition.IsNpcShimmered); // Let's sell an yoyo if this NPC is shimmered!
             /*
         if (ModContent.GetInstance<ExampleModConfig>().ExampleWingsToggle) {
             npcShop.Add<ExampleWings>(ExampleConditions.InExampleBiome);

@@ -9,16 +9,27 @@ To be added :
 Boss :
 
 Secret way to invoke
-- Josée, the myth
+- Josée, the myth (Tier ???)
 
 Story
-- President (Neil Rossy)
-- Chief of Direction (Patrick)
-- First vice-president, division of importation (Geoffrey)
-- Chief Operating Officer (Johanne)
-- (Tony)
-- District Manager
-- Supervisor
+- President (Neil Rossy) (Tier 10 Post-Director)
+- Board of Directors (Tier 9 Post-MoonLord)
+	- Stephen (Corporate Director, Chairman of the Board)
+	- Horacio (President and Chief Executive Officer, Old Navy, Inc.)
+	- Joshua (Senior Advisory Partner, Bain Capital Partners, LP)
+	- Court D. (Vice Chair, TricorBraun, Inc.)
+	- Elisa D. (Corporate Director)
+	- Kristin W. (Senior Lecturer, Harvard Business School)
+	- Samira (President and Chief Executive Officer, Knight Therapeutics Inc.)
+	- Huw (Corporate Director)
+- Chief of Direction (Patrick) (Tier 8 Pre-MoonLord)
+- First vice-president, division of importation (Geoffrey) (Tier 7 Pre-Lunatic)
+- Senior Vice-President, Legal Affairs and Corporate Secretary (Laurence) (Tier 6 Pre-Golem)
+- Chief Operating Officer (Johanne) (Tier 5 Pre-Plantera)
+- Chief Information Officer (Nicolas) (Tier 4 Pre-Mech) 
+- Director of Operations (Tony) (Tier 3 Pre-WOF)
+- District Manager (Dany) (Tier 2 Pre-Skeletron)
+- Supervisor (Michel) (Tier 1 Pre-Boss)
 
 Items :
 - Explosive

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheDollorama.Common.Systems;
+using TheDollorama.Content.Items.Armor;
 
 namespace TheDollorama.Content.Items.Consumables
 {
@@ -27,13 +28,11 @@ namespace TheDollorama.Content.Items.Consumables
 			Item.useAnimation = 15;
 			Item.useTime = 15;
 			Item.useTurn = true;
-			Item.UseSound = SoundID.Roar;
+			Item.UseSound = SoundID.Grab;
 			Item.maxStack = Item.CommonMaxStack;
 			Item.consumable = true;
 			Item.rare = ItemRarityID.Red;
-			Item.value = Item.buyPrice(gold: 1);
-			Item.buffType = ModContent.BuffType<Buffs.Depressed>(); // Specify an existing buff to be applied when used.
-			Item.buffTime = 3000; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
+			//Item.value = Item.buyPrice(gold: 1);
 		}
 
         public override bool? UseItem(Player player)
@@ -50,7 +49,9 @@ namespace TheDollorama.Content.Items.Consumables
             if (DownedBossSystem.downedSupervisor)
             {
                 pool.Add(ItemID.DemoniteBar);
-                //pool.Add(ModContent.ItemType<MyModItem2>());
+                pool.Add(ModContent.ItemType<SupervisorHelmet>());
+                pool.Add(ModContent.ItemType<SupervisorLeggings>());
+                pool.Add(ModContent.ItemType<SupervisorBreastplate>());
             }
 
             // Après Skeletron
@@ -72,9 +73,9 @@ namespace TheDollorama.Content.Items.Consumables
             int chosenItem = pool[Main.rand.Next(pool.Count)];
 
             // Quantité (optionnelle)
-            int amount = Main.rand.Next(1, 4);
+            //int amount = Main.rand.Next(1, 4);
 
-            player.QuickSpawnItem(player.GetSource_OpenItem(Type), chosenItem, amount);
+            player.QuickSpawnItem(player.GetSource_OpenItem(Type), chosenItem, 1);
 
             return true;
         }

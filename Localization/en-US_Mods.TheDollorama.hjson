@@ -276,6 +276,36 @@ Items: {
 			It smell like fish. You should be able to keep enemy at bay with this. It pulse with energy from unwashed ass
 			'''
 	}
+
+	Card10: {
+		DisplayName: Card10
+		Tooltip:
+			'''
+			Dollarama gift card of 10$.
+			It allow to get new stuff from the box and from the Assistant Team Leader
+			Should be able to get equipment from the Supervisor
+			'''
+	}
+
+	Card25: {
+		DisplayName: Card25
+		Tooltip:
+			'''
+			Dollarama gift card of 25$.
+			It allow to get new stuff from the box and from the Assistant Team Leader
+			Should be able to get equipment from the Chief Operating Officer
+			'''
+	}
+
+	Card50: {
+		DisplayName: Card50
+		Tooltip:
+			'''
+			Dollarama gift card of 50$.
+			It allow to get new stuff from the box and from the Assistant Team Leader
+			Should be able to get equipment from Chief of Direction
+			'''
+	}
 }
 
 Buffs: {
@@ -379,7 +409,7 @@ NPCs: {
 			Princess_LovesNPC: I like {NPCName}, I can't hate her, my programming doesn't let me.
 			LikeNPC_Princess: I like {NPCName}, the audacity of this bitch.
 			HateNPC: I hate {NPCName}, I HATE EVERYONE.
-			DislikeNPC: I dislike {NPCName}, n***a fuck you.
+			DislikeNPC: I dislike {NPCName}, because fuck you, that's why.
 			LikeNPC: I like {NPCName}.
 			LoveNPC: I love {NPCName}, they are my only friend.
 			DislikeBiome: I dislike {BiomeName}, there is no fucking tree.
@@ -399,27 +429,6 @@ NPCs: {
 	MinionBossBody.DisplayName: Supervisor
 	MinionBossMinion.DisplayName: Gerant
 
-	Fred: {
-		DisplayName: Fred
-
-		TownNPCMood: {
-			Content: I am content.
-			NoHome: I hate not having a home.
-			FarFromHome: I am too far from home.
-			LoveSpace: I love having so much space.
-			DislikeCrowded: I dislike how crowded I am.
-			HateCrowded: I hate how crowded I am.
-			LikeBiome: I like {BiomeName}.
-			DislikeBiome: I dislike {BiomeName}.
-			LoveNPC: I love {NPCName}.
-			LikeNPC: I like {NPCName}.
-			DislikeNPC: I dislike {NPCName}.
-			HateNPC: I hate {NPCName}.
-			LikeNPC_Princess: I like {NPCName}.
-			Princess_LovesNPC: I like {NPCName}.
-		}
-	}
-
 	Dev: {
 		DisplayName: Dev
 
@@ -428,7 +437,7 @@ NPCs: {
 			NoHome: How can I code my Mod without a home ?
 			FarFromHome: I am lost.
 			LoveSpace: I love being alone, it make me feel at peace.
-			DislikeCrowded: There is too much people, I will kill one of the soon.
+			DislikeCrowded: There is too much people, I will kill one of them soon.
 			HateCrowded: Bro, really ? I will make a genocide with the people of this town.
 			LikeBiome: I like {BiomeName}, it's almost magical.
 			DislikeBiome: I dislike {BiomeName}, well duh, the snow is shit on my cars.
@@ -444,7 +453,7 @@ NPCs: {
 	}
 
 	AssistantTeamChief: {
-		DisplayName: Assistant Team Chief
+		DisplayName: Assistant Team Leader
 
 		TownNPCMood: {
 			Content: I am content.
@@ -470,4 +479,9 @@ NPCs: {
 	SupervisorMinion.DisplayName: Supervisor's Minion
 }
 
-Conditions.PlayerHasBoosterPack: Mods.TheDollorama.Conditions.PlayerHasBoosterPack
+Conditions: {
+	PlayerHasBoosterPack: Mods.TheDollorama.Conditions.PlayerHasBoosterPack
+	PlayerHasCard50: Mods.TheDollorama.Conditions.PlayerHasCard50
+	PlayerHasCard25: Mods.TheDollorama.Conditions.PlayerHasCard25
+	PlayerHasCard10: Mods.TheDollorama.Conditions.PlayerHasCard10
+}
