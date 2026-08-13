@@ -283,7 +283,7 @@ Items: {
 			'''
 			Dollarama gift card of 10$.
 			It allow to get new stuff from the box and from the Assistant Team Leader
-			Should be able to get equipment from the Supervisor
+			The ATL should be selling equipment from the Supervisor
 			'''
 	}
 
@@ -293,7 +293,7 @@ Items: {
 			'''
 			Dollarama gift card of 25$.
 			It allow to get new stuff from the box and from the Assistant Team Leader
-			Should be able to get equipment from the Chief Operating Officer
+			The ATL should be selling equipment from the Chief Operating Officer
 			'''
 	}
 
@@ -303,8 +303,13 @@ Items: {
 			'''
 			Dollarama gift card of 50$.
 			It allow to get new stuff from the box and from the Assistant Team Leader
-			Should be able to get equipment from Chief of Direction
+			The ATL should be selling equipment from the Chief of Direction
 			'''
+	}
+
+	BallOfPrice: {
+		DisplayName: Ball Of Price
+		Tooltip: A simple ball of price, usefull to add a little kick to your attack
 	}
 }
 

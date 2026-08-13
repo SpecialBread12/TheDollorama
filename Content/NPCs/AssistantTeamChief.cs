@@ -360,7 +360,7 @@ namespace TheDollorama.Content.NPCs
 		}
 
 		public override void ModifyNPCLoot(NPCLoot npcLoot) {
-			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LuvfreshSoleil>()));
+			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<BallOfPrice>()));
 		}
 
 		// Make this Town NPC teleport to the King and/or Queen statue when triggered. Return toKingStatue for only King Statues. Return !toKingStatue for only Queen Statues. Return true for both.
@@ -441,5 +441,7 @@ namespace TheDollorama.Content.NPCs
 			// Use this or return null if you don't want to override the emote selection totally
 			return base.PickEmote(closestPlayer, emoteList, otherAnchor);
 		}
+
 	}
+
 }

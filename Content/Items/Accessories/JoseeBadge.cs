@@ -34,9 +34,7 @@ namespace TheDollorama.Content.Items.Accessories
 			player.manaCost -= 25;
 			player.maxMinions += 6;
 			player.maxRegenDelay -= 20;
-			player.statLifeMax += 100;
 			player.statLifeMax2 += 100;
-            player.statManaMax += 40;
             player.statManaMax2 += 40;
 			player.maxRunSpeed += 8;
 			player.wingTimeMax += 200;
@@ -48,10 +46,10 @@ namespace TheDollorama.Content.Items.Accessories
         {
             CreateRecipe(1)
                 .AddIngredient(ItemID.AnkhShield)
-                .AddIngredient(ModContent.ItemType<FruitPunchRockStar>(), 5)
-                .AddIngredient(ModContent.ItemType<BoosterPack>(), 5)
+                .AddIngredient(ModContent.ItemType<FruitPunchRockStar>(), 25)
+                .AddIngredient(ModContent.ItemType<BoosterPack>(), 10)
                 .AddIngredient(ItemID.PlatinumCoin, 50)
-                .AddTile<Tiles.Furniture.PreHardModePallet>()
+                .AddTile<Tiles.Furniture.PreHardModePallet>() //Will become the Store
                 .Register();
         }
     }
