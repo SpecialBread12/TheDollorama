@@ -30,8 +30,8 @@ namespace TheDollorama.Content.Items.Armor
 			Item.width = 18; // Width of the item
 			Item.height = 18; // Height of the item
 			Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
-			Item.rare = ItemRarityID.Orange; // The rarity of the item
-			Item.defense = 9; // The amount of defense the item will give when equipped
+			Item.rare = ItemRarityID.Green; // The rarity of the item
+			Item.defense = 4; // The amount of defense the item will give when equipped
 		}
 
 		// IsArmorSet determines what armor pieces are needed for the setbonus to take effect
@@ -42,28 +42,29 @@ namespace TheDollorama.Content.Items.Armor
 		// UpdateArmorSet allows you to give set bonuses to the armor.
 		public override void UpdateArmorSet(Player player) {
 			player.setBonus = SetBonusText.Value; // This is the setbonus tooltip: "Increases dealt damage by 20%"
-			player.GetDamage(DamageClass.Generic) += 0.20f; // Increase dealt damage for all weapon classes by 20%
-            player.GetAttackSpeed(DamageClass.Generic) += 0.30f;
-            player.statDefense += 5;
-            player.buffImmune[ModContent.BuffType<Cuts>()] = true;
-            player.buffImmune[ModContent.BuffType<Depressed>()] = true;
+			player.GetDamage(DamageClass.Generic) += 0.03f; // Increase dealt damage for all weapon classes by 20%
         }
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ModContent.ItemType<Depression>(), 3);
-				recipe.AddIngredient(ItemID.GoldCoin, 30);
-				recipe.AddIngredient(ItemID.SilverBar, 30);
-                    // Empêche la consommation du permis
-				recipe.AddConsumeItemCallback((Recipe r, int type, ref int amount) =>
-					{
-						if (type == ModContent.ItemType<Depression>())
-						amount = 0; // ne consomme aucun exemplaire
-
-					 });
-			recipe.AddTile<Tiles.Furniture.PreHardModePallet>();
-				recipe.Register();
+			recipe.AddIngredient(ModContent.ItemType<Card10>(), 1);
+			recipe.AddIngredient(ItemID.GoldCoin, 7);
+			recipe.AddIngredient(ModContent.ItemType<DollaramaBox>(), 10);
+            // Empêche la consommation du permis
+            recipe.AddConsumeIngredientCallback((Recipe recipe, int type, ref int amount, bool isDecrafting) =>
+            {
+                if (type == ModContent.ItemType<Card10>())
+                {
+                    amount = 0; // ne consomme pas la carte
+                }
+                if (!isDecrafting && type == ModContent.ItemType<Card10>())
+                {
+                    amount = 0;
+                }
+            });
+            recipe.AddTile<Tiles.Furniture.PreHardModePallet>();
+			recipe.Register();
 		}
-	}
+    }
 }

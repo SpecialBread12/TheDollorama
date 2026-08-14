@@ -149,22 +149,14 @@ Items: {
 	}
 
 	SupervisorHelmet: {
-		SetBonus:
-			'''
-			Your damage is increased by 20%
-			Your AttackSpeed is increased by 30%
-			You get 5 more defense
-			You are immune to cuts
-			You are immune to depression
-			Your underling hate you, but you get good money.
-			'''
+		SetBonus: Your damage is increased by 3%
 		DisplayName: Supervisor Helmet
 		Tooltip: ""
 	}
 
 	SupervisorBreastplate: {
 		DisplayName: Supervisor Breastplate
-		Tooltip: ""
+		Tooltip: Your underling hate you, but you get good money.
 	}
 
 	SupervisorLeggings: {
@@ -264,7 +256,7 @@ Items: {
 	}
 
 	FourFun: {
-		Tooltip: 4Fun a Dollarama brand chocolat that was discontinued for unkown reason
+		Tooltip: 4Fun a Dollarama brand chocolat that was discontinued for unknown reason
 		DisplayName: 4Fun
 	}
 
@@ -311,6 +303,16 @@ Items: {
 		DisplayName: Ball Of Price
 		Tooltip: A simple ball of price, usefull to add a little kick to your attack
 	}
+
+	EmptyPallet: {
+		DisplayName: An Empty Pallet
+		Tooltip: A Pallet, it's empty for now, but you are still able to craft some stuff
+	}
+
+	FullPallet: {
+		DisplayName: Full Pallet
+		Tooltip: Filled to the brim with goodies, still leaning to one side like always
+	}
 }
 
 Buffs: {
@@ -346,7 +348,7 @@ Buffs: {
 
 	EnergyRegen: {
 		DisplayName: Energy Regen
-		Description: You are pushing your body to it's limit. Regen is INSANLY increased.
+		Description: You are pushing your body to it's limit. Regen is INSANELY increased.
 	}
 
 	Depressed: {

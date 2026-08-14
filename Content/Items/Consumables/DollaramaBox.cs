@@ -15,23 +15,24 @@ namespace TheDollorama.Content.Items.Consumables
 
 			// Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
 			ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
-				new Color(240, 0, 0),
-				new Color(200, 0, 0),
-				new Color(140, 0, 0)
+				new Color(130, 65, 0),
+				new Color(120, 70, 0),
+				new Color(140, 60, 0)
 			};
 		}
 
 		public override void SetDefaults() {
 			Item.width = 10;
-			Item.height = 15;
-			Item.useStyle = ItemUseStyleID.Guitar;
-			Item.useAnimation = 15;
-			Item.useTime = 15;
+			Item.height = 20;
+			Item.useStyle = ItemUseStyleID.HoldUp;
+			Item.useAnimation = 10;
+			Item.useTime = 10;
 			Item.useTurn = true;
-			Item.UseSound = SoundID.Grab;
+            Item.autoReuse = true;
+            Item.UseSound = SoundID.Grab;
 			Item.maxStack = Item.CommonMaxStack;
 			Item.consumable = true;
-			Item.rare = ItemRarityID.Red;
+			Item.rare = ItemRarityID.Green;
 			//Item.value = Item.buyPrice(gold: 1);
 		}
 
@@ -41,14 +42,23 @@ namespace TheDollorama.Content.Items.Consumables
 
             // Toujours disponibles
             pool.Add(ItemID.Wood);
-            pool.Add(ItemID.IronBar);
-            pool.Add(ModContent.ItemType<CutPotion>());
+            pool.Add(ItemID.TinOre);
+            pool.Add(ItemID.CopperOre);
+            pool.Add(ItemID.IronOre);
+            pool.Add(ItemID.LeadOre);
+            pool.Add(ItemID.SilverOre);
+            pool.Add(ItemID.TungstenOre);
+            pool.Add(ItemID.GoldOre);
+            pool.Add(ItemID.PlatinumOre);
+
+
             pool.Add(ModContent.ItemType<FourFun>());
 
             // Après Le Supervisor
             if (DownedBossSystem.downedSupervisor)
             {
-                pool.Add(ItemID.DemoniteBar);
+                pool.Add(ItemID.DemoniteOre);
+                pool.Add(ModContent.ItemType<CutPotion>());
                 pool.Add(ModContent.ItemType<SupervisorHelmet>());
                 pool.Add(ModContent.ItemType<SupervisorLeggings>());
                 pool.Add(ModContent.ItemType<SupervisorBreastplate>());
@@ -64,9 +74,12 @@ namespace TheDollorama.Content.Items.Consumables
             // Hardmode
             if (Main.hardMode)
             {
-                pool.Add(ItemID.CobaltBar);
-                pool.Add(ItemID.MythrilBar);
-                //pool.Add(ModContent.ItemType<MyModHardmodeItem>());
+                pool.Add(ItemID.CobaltOre);
+                pool.Add(ItemID.PalladiumOre);
+                pool.Add(ItemID.MythrilOre);
+                pool.Add(ItemID.OrichalcumOre);
+                pool.Add(ItemID.TitaniumOre);
+                pool.Add(ItemID.AdamantiteOre);
             }
 
             // Choisir un objet au hasard

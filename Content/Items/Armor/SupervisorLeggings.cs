@@ -19,21 +19,30 @@ namespace TheDollorama.Content.Items.Armor
 			Item.width = 18; // Width of the item
 			Item.height = 18; // Height of the item
 			Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
-			Item.rare = ItemRarityID.Orange; // The rarity of the item
-			Item.defense = 7; // The amount of defense the item will give when equipped
+			Item.rare = ItemRarityID.Green; // The rarity of the item
+			Item.defense = 4; // The amount of defense the item will give when equipped
 		}
-
-		public override void UpdateEquip(Player player) {
-			//player.moveSpeed += MoveSpeedBonus / 100f; // Increase the movement speed of the player
-		}
-
-		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-		public override void AddRecipes() {
-			CreateRecipe()
-                .AddIngredient(ModContent.ItemType<Depression>(), 2)
-                .AddIngredient(ItemID.GoldCoin, 25)
-                .AddTile<Tiles.Furniture.PreHardModePallet>()
-				.Register();
-		}
-	}
+        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<Card10>(), 1);
+            recipe.AddIngredient(ItemID.GoldCoin, 5);
+            recipe.AddIngredient(ModContent.ItemType<DollaramaBox>(), 10);
+            // Empêche la consommation du permis
+            recipe.AddConsumeIngredientCallback((Recipe recipe, int type, ref int amount, bool isDecrafting) =>
+            {
+                if (type == ModContent.ItemType<Card10>())
+                {
+                    amount = 0; // ne consomme pas la carte
+                }
+                if (!isDecrafting && type == ModContent.ItemType<Card10>())
+                {
+                    amount = 0;
+                }
+            });
+            recipe.AddTile<Tiles.Furniture.PreHardModePallet>();
+            recipe.Register();
+        }
+    }
 }
